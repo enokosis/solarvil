@@ -1,0 +1,64 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://scripts/level_two/sensor/sensor_lammitys.gd" type="Script" id=1]
+[ext_resource path="res://art/stage 2/sensor.png" type="Texture" id=2]
+[ext_resource path="res://art/stage 2/charts/chart_animation1.png" type="Texture" id=3]
+[ext_resource path="res://art/stage 2/charts/chart_animation2.png" type="Texture" id=4]
+[ext_resource path="res://art/stage 2/charts/chart_animation3.png" type="Texture" id=5]
+[ext_resource path="res://art/stage 2/charts/chart_animation5.png" type="Texture" id=6]
+[ext_resource path="res://art/stage 2/charts/chart_animation8.png" type="Texture" id=7]
+[ext_resource path="res://art/stage 2/charts/chart_animation9.png" type="Texture" id=8]
+[ext_resource path="res://art/stage 2/charts/chart_animation10.png" type="Texture" id=9]
+[ext_resource path="res://art/stage 2/charts/ulkolampotila3.png" type="Texture" id=10]
+[ext_resource path="res://art/stage 2/charts/ulkolampotila2.png" type="Texture" id=11]
+[ext_resource path="res://art/stage 2/charts/chart_animation4.png" type="Texture" id=12]
+[ext_resource path="res://art/stage 2/charts/ulkolampotila6.png" type="Texture" id=13]
+[ext_resource path="res://art/stage 2/charts/chart_animation6.png" type="Texture" id=14]
+[ext_resource path="res://art/stage 2/charts/chart_animation7.png" type="Texture" id=15]
+[ext_resource path="res://art/stage 2/charts/ulkolampotila1.png" type="Texture" id=16]
+[ext_resource path="res://art/stage 2/charts/ulkolampotila5.png" type="Texture" id=17]
+[ext_resource path="res://art/stage 2/charts/ulkolampotila4.png" type="Texture" id=18]
+[ext_resource path="res://ui/basic_theme.tres" type="Theme" id=19]
+[ext_resource path="res://ui/build_ui.tres" type="Theme" id=20]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 12 ), ExtResource( 6 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "chart_normal",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 16 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 18 ), ExtResource( 17 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Sensor" type="TextureButton"]
+margin_right = 65.0
+margin_bottom = 98.0
+theme = ExtResource( 19 )
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 2 )
+script = ExtResource( 1 )
+
+[node name="TypeLabel" type="Label" parent="."]
+margin_top = 133.0
+margin_right = 162.0
+margin_bottom = 155.0
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 66.1719, 83 )
+scale = Vector2( 0.856562, 0.643125 )
+frames = SubResource( 1 )
+animation = "chart_normal"
+frame = 1
+playing = true
+
+[node name="CounterLabel" type="Label" parent="."]
+margin_left = 20.0
+margin_top = 43.0
+margin_right = 41.0
+margin_bottom = 73.0
+theme = ExtResource( 20 )
+text = "re"

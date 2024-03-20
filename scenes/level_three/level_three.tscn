@@ -1,0 +1,2934 @@
+[gd_scene load_steps=76 format=2]
+
+[ext_resource path="res://art/background_1_gameboy.png" type="Texture" id=1]
+[ext_resource path="res://scenes/pop_up_window.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/level_three/level_three.gd" type="Script" id=3]
+[ext_resource path="res://art/light_bulb.png" type="Texture" id=4]
+[ext_resource path="res://art/money_bag.png" type="Texture" id=5]
+[ext_resource path="res://art/sun_icon.png" type="Texture" id=6]
+[ext_resource path="res://art/family.png" type="Texture" id=7]
+[ext_resource path="res://ui/basic_theme.tres" type="Theme" id=8]
+[ext_resource path="res://scripts/level_three/mouse_interaction.gd" type="Script" id=9]
+[ext_resource path="res://art/battery.png" type="Texture" id=10]
+[ext_resource path="res://art/house.png" type="Texture" id=11]
+[ext_resource path="res://art/energy_reserve.png" type="Texture" id=12]
+[ext_resource path="res://art/solar_panel.png" type="Texture" id=13]
+[ext_resource path="res://scripts/level_three/tool_selection.gd" type="Script" id=14]
+[ext_resource path="res://scenes/level_three/season_dial.tscn" type="PackedScene" id=15]
+[ext_resource path="res://art/report_icon.png" type="Texture" id=16]
+[ext_resource path="res://scripts/level_three/amount_selection.gd" type="Script" id=17]
+[ext_resource path="res://art/ten.png" type="Texture" id=18]
+[ext_resource path="res://art/hundred.png" type="Texture" id=19]
+[ext_resource path="res://art/one.png" type="Texture" id=20]
+[ext_resource path="res://art/report.png" type="Texture" id=21]
+[ext_resource path="res://ui/report_basic_theme.tres" type="Theme" id=22]
+[ext_resource path="res://ui/invisible_button_theme.tres" type="Theme" id=23]
+[ext_resource path="res://art/report_points.png" type="Texture" id=24]
+[ext_resource path="res://scripts/level_three/infra_ghost.gd" type="Script" id=25]
+[ext_resource path="res://art/question_mark.png" type="Texture" id=26]
+[ext_resource path="res://art/cricle.png" type="Texture" id=27]
+[ext_resource path="res://scripts/level_three/info.gd" type="Script" id=28]
+[ext_resource path="res://art/remover.png" type="Texture" id=29]
+[ext_resource path="res://scripts/level_three/onboarding.gd" type="Script" id=30]
+[ext_resource path="res://art/door_icon.png" type="Texture" id=31]
+[ext_resource path="res://scripts/level_three/dialogue_box.gd" type="Script" id=32]
+[ext_resource path="res://ui/text_body.tres" type="Theme" id=33]
+[ext_resource path="res://art/boss_face.png" type="Texture" id=34]
+[ext_resource path="res://scripts/level_three/save_and_quit.gd" type="Script" id=35]
+[ext_resource path="res://scripts/level_three/feedback.gd" type="Script" id=36]
+[ext_resource path="res://ui/build_ui.tres" type="Theme" id=37]
+[ext_resource path="res://art/stage 2/animations/level_threebuttons_pump.tres" type="Animation" id=38]
+[ext_resource path="res://scripts/level_three/report_points.gd" type="Script" id=39]
+[ext_resource path="res://ui/report_smaller_theme.tres" type="Theme" id=40]
+[ext_resource path="res://art/exit.png" type="Texture" id=41]
+
+[sub_resource type="Animation" id=16]
+length = 0.001
+
+[sub_resource type="Animation" id=3]
+resource_name = "toggle_infra_ui"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 364, 400 ), Vector2( 364, 450 ), Vector2( 364, 500 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 94.5, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "reveal_button"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 0.366022, 1 ),
+"update": 0,
+"values": [ Vector2( 94.5, 0 ), Vector2( 94.5, -36 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, true, false ]
+}
+
+[sub_resource type="Animation" id=13]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 94.5, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "reveal_button"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 0.366022, 1 ),
+"update": 0,
+"values": [ Vector2( 94.5, 0 ), Vector2( 94.5, -36 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, true, false ]
+}
+
+[sub_resource type="Animation" id=24]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1e-05, 1e-05 ) ]
+}
+
+[sub_resource type="Animation" id=25]
+resource_name = "saved_message"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 2.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1e-05, 1e-05 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1e-05, 1e-05 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "toggle_infra_ui"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 364, 400 ), Vector2( 364, 450 ), Vector2( 364, 500 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "pump_scale"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=1]
+resource_name = "report_appears"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 442.5, 493 ), Vector2( 442.5, 0 ) ]
+}
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="Animation" id=34]
+resource_name = "button_size_pump"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=19]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("..:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 600 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "report_appears"
+length = 5.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("..:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 500 ), Vector2( 0, 369.565 ), Vector2( 0, 369.565 ), Vector2( 0, 283.685 ), Vector2( 0, 283.685 ), Vector2( 0, 181.559 ), Vector2( 0, 181.559 ), Vector2( 0, 96.1192 ), Vector2( 0, 96.1192 ), Vector2( 0, -10 ), Vector2( 0, -10 ) ]
+}
+
+[sub_resource type="Animation" id=22]
+resource_name = "report_disappears"
+tracks/0/type = "value"
+tracks/0/path = NodePath("..:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -10 ), Vector2( 0, 500 ) ]
+}
+
+[sub_resource type="Animation" id=17]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=18]
+resource_name = "size_pump"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="StyleBoxFlat" id=23]
+bg_color = Color( 0.0588235, 0.392157, 0.67451, 1 )
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color( 0.0588235, 0.392157, 0.67451, 1 )
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="Animation" id=20]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=21]
+resource_name = "size_pump"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.1 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "size_pump"
+length = 1.6
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.2, 2.4, 2.6, 2.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "solar_panel_size_pump"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("../infra_panel/HBoxContainer/sc_button:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "button_size_pump"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "button_size_pump"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "button_size_pump"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="StyleBoxEmpty" id=26]
+
+[sub_resource type="Animation" id=27]
+resource_name = "button_size_pump"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=28]
+resource_name = "button_size_pump"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=29]
+resource_name = "button_size_pump"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=30]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=31]
+resource_name = "size_pump"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=32]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=33]
+resource_name = "size_pump"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+
+[node name="level_three" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1.0
+margin_top = -47.0
+margin_right = -1.0
+margin_bottom = -47.0
+texture = ExtResource( 1 )
+
+[node name="infra_input_blocker" type="ColorRect" parent="."]
+margin_right = 1021.0
+margin_bottom = 51.0
+color = Color( 1, 1, 1, 0 )
+
+[node name="infra_input_blocker2" type="ColorRect" parent="."]
+margin_left = 351.0
+margin_top = 296.0
+margin_right = 682.0
+margin_bottom = 508.0
+color = Color( 1, 1, 1, 0 )
+
+[node name="infra_input_blocker3" type="ColorRect" parent="."]
+margin_left = -21.0
+margin_top = 471.0
+margin_right = 1076.0
+margin_bottom = 590.0
+color = Color( 1, 1, 1, 0 )
+
+[node name="infra_input_blocker4" type="ColorRect" parent="."]
+margin_left = 774.0
+margin_top = -63.0
+margin_right = 1048.0
+margin_bottom = 174.0
+color = Color( 1, 1, 1, 0 )
+
+[node name="mouse_interaction" type="Node2D" parent="."]
+script = ExtResource( 9 )
+
+[node name="YSort" type="YSort" parent="mouse_interaction"]
+
+[node name="infra_panel" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -148.0
+margin_top = 100.0
+margin_right = 148.0
+margin_bottom = 204.0
+theme = ExtResource( 8 )
+script = ExtResource( 14 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="infra_panel"]
+margin_left = 10.0
+margin_top = 17.0
+margin_right = 287.0
+margin_bottom = 81.0
+custom_constants/separation = 30
+alignment = 1
+
+[node name="house_button" type="TextureButton" parent="infra_panel/HBoxContainer"]
+visible = false
+margin_left = 12.0
+margin_right = 76.0
+margin_bottom = 64.0
+focus_mode = 1
+texture_normal = ExtResource( 11 )
+
+[node name="selected" type="ColorRect" parent="infra_panel/HBoxContainer/house_button"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+color = Color( 0.545098, 0.67451, 0.0588235, 1 )
+
+[node name="sc_button" type="TextureButton" parent="infra_panel/HBoxContainer"]
+margin_left = 59.0
+margin_right = 123.0
+margin_bottom = 64.0
+rect_pivot_offset = Vector2( 32, 32 )
+hint_tooltip = "Lisää aurinkokeräinpaneeli"
+texture_normal = ExtResource( 13 )
+
+[node name="selected" type="ColorRect" parent="infra_panel/HBoxContainer/sc_button"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+color = Color( 0.545098, 0.67451, 0.0588235, 1 )
+
+[node name="er_button" type="TextureButton" parent="infra_panel/HBoxContainer"]
+margin_left = 153.0
+margin_right = 217.0
+margin_bottom = 64.0
+rect_pivot_offset = Vector2( 32, 32 )
+hint_tooltip = "Lisää lähtökapasiteettia"
+texture_normal = ExtResource( 12 )
+
+[node name="selected" type="ColorRect" parent="infra_panel/HBoxContainer/er_button"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+color = Color( 0.545098, 0.67451, 0.0588235, 1 )
+
+[node name="remover_button" type="TextureButton" parent="infra_panel/HBoxContainer"]
+visible = false
+margin_left = 200.0
+margin_right = 264.0
+margin_bottom = 64.0
+hint_tooltip = "Muuta kylää"
+texture_normal = ExtResource( 29 )
+
+[node name="selected" type="ColorRect" parent="infra_panel/HBoxContainer/remover_button"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+color = Color( 0.545098, 0.67451, 0.0588235, 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="infra_panel"]
+anims/RESET = SubResource( 16 )
+anims/toggle_infra_ui = SubResource( 3 )
+
+[node name="buttons_animation" type="AnimationPlayer" parent="infra_panel"]
+anims/level_threebuttons_pump = ExtResource( 38 )
+
+[node name="build" type="Button" parent="infra_panel"]
+show_behind_parent = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -53.5
+margin_top = -52.0
+margin_right = 53.5
+margin_bottom = -17.9993
+focus_mode = 0
+theme = ExtResource( 37 )
+disabled = true
+text = "RAKENNA"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="infra_panel/build"]
+anims/RESET = SubResource( 11 )
+anims/reveal_button = SubResource( 12 )
+
+[node name="modify" type="Button" parent="infra_panel"]
+show_behind_parent = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -53.5
+margin_top = -52.0
+margin_right = 53.4998
+margin_bottom = -17.9997
+focus_mode = 0
+theme = ExtResource( 37 )
+disabled = true
+text = "MUUTA"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="infra_panel/modify"]
+anims/RESET = SubResource( 13 )
+anims/reveal_button = SubResource( 14 )
+
+[node name="report_and_quit_panel" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 264.0
+margin_top = 100.0
+margin_right = 512.0
+margin_bottom = 204.0
+theme = ExtResource( 8 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="report_and_quit_panel"]
+margin_left = -5.0
+margin_top = 17.0
+margin_right = 247.0
+margin_bottom = 81.0
+custom_constants/separation = 10
+alignment = 1
+
+[node name="report_button" type="TextureButton" parent="report_and_quit_panel/HBoxContainer"]
+margin_left = 20.0
+margin_right = 84.0
+margin_bottom = 64.0
+hint_tooltip = "Katso edellinen raportti"
+texture_normal = ExtResource( 16 )
+
+[node name="door_button" type="TextureButton" parent="report_and_quit_panel/HBoxContainer"]
+margin_left = 94.0
+margin_right = 158.0
+margin_bottom = 64.0
+hint_tooltip = "Tallenna peli"
+texture_normal = ExtResource( 31 )
+
+[node name="saved_message" type="Label" parent="report_and_quit_panel/HBoxContainer/door_button"]
+margin_left = -57.0
+margin_top = -56.0
+margin_right = 116.0
+margin_bottom = -26.0
+rect_scale = Vector2( 1e-05, 1e-05 )
+rect_pivot_offset = Vector2( 86, 15 )
+theme = ExtResource( 37 )
+text = "Peli tallennettu!"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="report_and_quit_panel/HBoxContainer/door_button/saved_message"]
+anims/RESET = SubResource( 24 )
+anims/saved_message = SubResource( 25 )
+
+[node name="quit_game" type="TextureButton" parent="report_and_quit_panel/HBoxContainer"]
+margin_left = 168.0
+margin_right = 232.0
+margin_bottom = 64.0
+hint_tooltip = "Poistu tasolta"
+texture_normal = ExtResource( 41 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="report_and_quit_panel"]
+anims/toggle_infra_ui = SubResource( 9 )
+
+[node name="infra_amount_panel" type="Panel" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -171.0
+margin_top = 57.0
+margin_right = 125.0
+margin_bottom = 161.0
+rect_scale = Vector2( 0.5, 0.5 )
+theme = ExtResource( 8 )
+script = ExtResource( 17 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="infra_amount_panel"]
+margin_left = 10.0
+margin_top = 17.0
+margin_right = 287.0
+margin_bottom = 81.0
+custom_constants/separation = 30
+alignment = 1
+
+[node name="1_button" type="TextureButton" parent="infra_amount_panel/HBoxContainer"]
+margin_left = 12.0
+margin_right = 76.0
+margin_bottom = 64.0
+texture_normal = ExtResource( 20 )
+
+[node name="selected" type="ColorRect" parent="infra_amount_panel/HBoxContainer/1_button"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+color = Color( 0.545098, 0.67451, 0.0588235, 1 )
+
+[node name="10_button" type="TextureButton" parent="infra_amount_panel/HBoxContainer"]
+margin_left = 106.0
+margin_right = 170.0
+margin_bottom = 64.0
+texture_normal = ExtResource( 18 )
+
+[node name="selected" type="ColorRect" parent="infra_amount_panel/HBoxContainer/10_button"]
+visible = false
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+color = Color( 0.545098, 0.67451, 0.0588235, 1 )
+
+[node name="100_button" type="TextureButton" parent="infra_amount_panel/HBoxContainer"]
+margin_left = 200.0
+margin_right = 264.0
+margin_bottom = 64.0
+texture_normal = ExtResource( 19 )
+
+[node name="selected" type="ColorRect" parent="infra_amount_panel/HBoxContainer/100_button"]
+visible = false
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+color = Color( 0.545098, 0.67451, 0.0588235, 1 )
+
+[node name="season_panel" type="Panel" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -96.0
+margin_right = 108.0
+margin_bottom = 104.0
+theme = ExtResource( 8 )
+
+[node name="round_info" type="Control" parent="."]
+margin_left = 16.0
+margin_top = 8.0
+margin_right = 144.0
+margin_bottom = 136.0
+hint_tooltip = "Nykyinen vuoro"
+
+[node name="round_bg" type="TextureRect" parent="round_info"]
+margin_left = 10.0
+margin_top = 9.0
+margin_right = 74.0
+margin_bottom = 73.0
+rect_scale = Vector2( 1.5, 1.5 )
+hint_tooltip = "Nykyinen vuoro"
+texture = ExtResource( 27 )
+
+[node name="header" type="RichTextLabel" parent="round_info"]
+margin_left = 20.0
+margin_top = 32.0
+margin_right = 97.0
+margin_bottom = 72.0
+theme = ExtResource( 33 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_text = "VUORO"
+text = "VUORO"
+
+[node name="round" type="RichTextLabel" parent="round_info"]
+margin_left = 36.0
+margin_top = 59.0
+margin_right = 82.0
+margin_bottom = 99.0
+theme = ExtResource( 33 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "999"
+text = "999"
+
+[node name="year_info" type="RichTextLabel" parent="."]
+visible = false
+margin_left = 448.0
+margin_right = 574.0
+margin_bottom = 64.0
+theme = ExtResource( 8 )
+bbcode_enabled = true
+bbcode_text = "[center]1. vuosi[/center]"
+text = "1. vuosi"
+
+[node name="season_info" type="RichTextLabel" parent="."]
+visible = false
+margin_left = 448.0
+margin_top = 17.0
+margin_right = 574.0
+margin_bottom = 65.0
+theme = ExtResource( 8 )
+bbcode_enabled = true
+bbcode_text = "[center]KEVÄT[/center]"
+text = "KEVÄT"
+
+[node name="season_dial" parent="." instance=ExtResource( 15 )]
+visible = false
+position = Vector2( 511, 3 )
+
+[node name="info" type="TextureButton" parent="."]
+margin_left = 942.0
+margin_top = 16.0
+margin_right = 1006.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 32, 32 )
+hint_tooltip = "Tutustu ohjeisiin"
+texture_normal = ExtResource( 26 )
+script = ExtResource( 28 )
+
+[node name="bg" type="TextureRect" parent="info"]
+show_behind_parent = true
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 27 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="info"]
+anims/pump_scale = SubResource( 7 )
+
+[node name="old_report" type="TextureRect" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -276.5
+margin_top = 193.0
+margin_right = -137.5
+margin_bottom = 332.0
+rect_scale = Vector2( 4, 4 )
+rect_pivot_offset = Vector2( 69, 0 )
+texture = ExtResource( 21 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="old_report"]
+anims/report_appears = SubResource( 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="old_report"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 521.0
+margin_bottom = 469.0
+rect_scale = Vector2( 0.2, 0.2 )
+theme = ExtResource( 22 )
+custom_constants/separation = 15
+
+[node name="HSeparator" type="HSeparator" parent="old_report/VBoxContainer"]
+margin_right = 501.0
+margin_bottom = 4.0
+
+[node name="report_feedback" type="HBoxContainer" parent="old_report/VBoxContainer"]
+margin_top = 19.0
+margin_right = 501.0
+margin_bottom = 50.0
+
+[node name="feedback" type="RichTextLabel" parent="old_report/VBoxContainer/report_feedback"]
+margin_right = 450.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 450, 0 )
+size_flags_horizontal = 0
+size_flags_vertical = 4
+bbcode_enabled = true
+bbcode_text = "feedback goes here"
+text = "feedback goes here"
+fit_content_height = true
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="old_report/VBoxContainer"]
+visible = false
+margin_top = 280.0
+margin_right = 501.0
+margin_bottom = 311.0
+
+[node name="tries_header" type="RichTextLabel" parent="old_report/VBoxContainer/HBoxContainer6"]
+margin_right = 340.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 340, 0 )
+size_flags_horizontal = 0
+size_flags_vertical = 4
+bbcode_enabled = true
+bbcode_text = "Käytetyt vuorot"
+text = "Käytetyt vuorot"
+fit_content_height = true
+
+[node name="tries" type="RichTextLabel" parent="old_report/VBoxContainer/HBoxContainer6"]
+margin_left = 344.0
+margin_right = 501.0
+margin_bottom = 31.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+bbcode_enabled = true
+bbcode_text = "0"
+text = "0"
+fit_content_height = true
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="old_report/VBoxContainer"]
+visible = false
+margin_top = 234.0
+margin_right = 501.0
+margin_bottom = 265.0
+
+[node name="points_header" type="RichTextLabel" parent="old_report/VBoxContainer/HBoxContainer5"]
+margin_right = 340.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 340, 0 )
+size_flags_horizontal = 0
+size_flags_vertical = 4
+bbcode_enabled = true
+bbcode_text = "PISTEET"
+text = "PISTEET"
+fit_content_height = true
+
+[node name="points2" type="RichTextLabel" parent="old_report/VBoxContainer/HBoxContainer5"]
+margin_left = 344.0
+margin_right = 420.0
+margin_bottom = 31.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+bbcode_enabled = true
+fit_content_height = true
+
+[node name="points" type="RichTextLabel" parent="old_report/VBoxContainer/HBoxContainer5"]
+margin_left = 424.0
+margin_right = 501.0
+margin_bottom = 31.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+bbcode_enabled = true
+bbcode_text = "0"
+text = "0"
+fit_content_height = true
+
+[node name="ok_button" type="Button" parent="old_report"]
+margin_left = 107.75
+margin_top = 109.25
+margin_right = 156.75
+margin_bottom = 148.25
+rect_scale = Vector2( 0.2, 0.2 )
+theme = ExtResource( 23 )
+text = "OK!"
+
+[node name="budget_warning" type="Panel" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -299.5
+margin_right = 512.0
+margin_bottom = 299.5
+theme = ExtResource( 8 )
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 32 )
+
+[node name="background_color" type="ColorRect" parent="budget_warning"]
+visible = false
+modulate = Color( 0, 0, 0, 0.627451 )
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Panel" type="Panel" parent="budget_warning"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -345.0
+margin_top = -198.5
+margin_right = 346.0
+margin_bottom = -0.5
+
+[node name="TextureRect" type="TextureRect" parent="budget_warning/Panel"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -202.5
+margin_right = 128.0
+margin_bottom = -74.5
+rect_scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 34 )
+
+[node name="dialogue" type="Control" parent="budget_warning/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="0" type="RichTextLabel" parent="budget_warning/Panel/dialogue"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -494.0
+margin_top = -70.0
+margin_right = -8.0
+margin_bottom = 92.0
+theme = ExtResource( 33 )
+bbcode_enabled = true
+bbcode_text = "Pidä silmällä budjettiasi!
+Jos rahasi pääsevät loppumaan joudut lopettamaan pelaamisen."
+text = "Pidä silmällä budjettiasi!
+Jos rahasi pääsevät loppumaan joudut lopettamaan pelaamisen."
+
+[node name="next_dialogue" type="Button" parent="budget_warning/Panel"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 293.5
+margin_top = -24.5
+margin_right = 388.5
+margin_bottom = 18.5
+rect_pivot_offset = Vector2( 47, 21 )
+text = "jatka"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="budget_warning/Panel/next_dialogue"]
+autoplay = "button_size_pump"
+anims/button_size_pump = SubResource( 34 )
+
+[node name="report" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 600.0
+margin_right = 33792.0
+margin_bottom = 20400.0
+script = ExtResource( 39 )
+
+[node name="report_points" type="TextureRect" parent="report"]
+margin_left = 112.0
+margin_top = 8.0
+margin_right = 912.0
+margin_bottom = 1208.0
+rect_pivot_offset = Vector2( 100, 0 )
+texture = ExtResource( 24 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="report/report_points"]
+anims/RESET = SubResource( 19 )
+anims/report_appears = SubResource( 2 )
+anims/report_disappears = SubResource( 22 )
+
+[node name="Header" type="HBoxContainer" parent="report/report_points"]
+margin_left = 19.0
+margin_top = -40.0
+margin_right = 818.0
+margin_bottom = 144.0
+size_flags_vertical = 0
+theme = ExtResource( 22 )
+
+[node name="empty" type="RichTextLabel" parent="report/report_points/Header"]
+margin_top = 76.0
+margin_right = 340.0
+margin_bottom = 107.0
+rect_min_size = Vector2( 340, 0 )
+size_flags_horizontal = 0
+size_flags_vertical = 4
+bbcode_enabled = true
+fit_content_height = true
+
+[node name="Pisteet" type="RichTextLabel" parent="report/report_points/Header"]
+margin_left = 344.0
+margin_top = 76.0
+margin_right = 495.0
+margin_bottom = 107.0
+rect_min_size = Vector2( 10, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 4
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+bbcode_text = "Pisteet"
+text = "Pisteet"
+fit_content_height = true
+
+[node name="Muutos" type="RichTextLabel" parent="report/report_points/Header"]
+margin_left = 499.0
+margin_top = 61.0
+margin_right = 799.0
+margin_bottom = 123.0
+rect_min_size = Vector2( 300, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 4
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+bbcode_text = "Muutos
+edellisvuoroon"
+text = "Muutos
+edellisvuoroon"
+fit_content_height = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="report/report_points"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -405.0
+margin_top = -492.0
+margin_right = 405.0
+margin_bottom = -120.0
+theme = ExtResource( 8 )
+scroll_horizontal_enabled = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="report/report_points/ScrollContainer"]
+margin_right = 798.0
+margin_bottom = 1000.0
+rect_min_size = Vector2( 750, 1000 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource( 22 )
+custom_constants/separation = 15
+
+[node name="Sustainability" type="HBoxContainer" parent="report/report_points/ScrollContainer/VBoxContainer"]
+margin_right = 798.0
+margin_bottom = 31.0
+
+[node name="Header" type="RichTextLabel" parent="report/report_points/ScrollContainer/VBoxContainer/Sustainability"]
+margin_right = 340.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 340, 0 )
+size_flags_horizontal = 0
+size_flags_vertical = 4
+bbcode_enabled = true
+bbcode_text = "Omavaraisuus"
+text = "Omavaraisuus"
+fit_content_height = true
+
+[node name="sustainability_Score" type="RichTextLabel" parent="report/report_points/ScrollContainer/VBoxContainer/Sustainability"]
+margin_left = 344.0
+margin_right = 494.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 150, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 4
+bbcode_enabled = true
+bbcode_text = "0"
+text = "0"
+fit_content_height = true
+
+[node name="sustainability_delta" type="RichTextLabel" parent="report/report_points/ScrollContainer/VBoxContainer/Sustainability"]
+margin_left = 498.0
+margin_right = 798.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 300, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 4
+bbcode_enabled = true
+bbcode_text = "0"
+text = "0"
+fit_content_height = true
+
+[node name="sustainability_report" type="HBoxContainer" parent="report/report_points/ScrollContainer/VBoxContainer"]
+margin_top = 46.0
+margin_right = 798.0
+margin_bottom = 69.0
+theme = ExtResource( 40 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="report/report_points/ScrollContainer/VBoxContainer/sustainability_report"]
+margin_right = 200.0
+margin_bottom = 23.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_horizontal = 0
+size_flags_vertical = 4
+bbcode_enabled = true
+bbcode_text = "	Omavaraisuusaste"
+text = "	Omavaraisuusaste"
+fit_content_height = true
+
+[node name="sustainability_percentage" type="RichTextLabel" parent="report/report_points/ScrollContainer/VBoxContainer/sustainability_report"]
+margin_left = 204.0
+margin_right = 798.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+bbcode_enabled = true
+bbcode_text = "0 %"
+text = "0 %"
+fit_content_height = true
+
+[node name="difference" type="HBoxContainer" parent="report/report_points/ScrollContainer/VBoxContainer"]
+margin_top = 84.0
+margin_right = 798.0
+margin_bottom = 115.0
+size_flags_vertical = 0
+
+[node name="header" type="RichTextLabel" parent="report/report_points/ScrollContainer/VBoxContainer/difference"]
+margin_right = 340.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 340, 0 )
+size_flags_horizontal = 0
+size_flags_vertical = 4
+bbcode_enabled = true
+bbcode_text = "Tasapaino"
+text = "Tasapaino"
+fit_content_height = true
+
+[node name="difference_score" type="RichTextLabel" parent="report/report_points/ScrollContainer/VBoxContainer/difference"]
+margin_left = 344.0
+margin_right = 494.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 150, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 4
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+bbcode_text = "0"
+text = "0"
+fit_content_height = true
+
+[node name="difference_delta" type="RichTextLabel" parent="report/report_points/ScrollContainer/VBoxContainer/difference"]
+margin_left = 498.0
+margin_right = 798.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 300, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 4
+bbcode_enabled = true
+bbcode_text = "0"
+text = "0"
+fit_content_height = true
+
+[node name="balance_report" type="HBoxContainer" parent="report/report_points/ScrollContainer/VBoxContainer"]
+margin_top = 130.0
+margin_right = 798.0
+margin_bottom = 176.0
+size_flags_vertical = 0
+theme = ExtResource( 40 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="report/report_points/ScrollContainer/VBoxContainer/balance_report"]
+margin_right = 200.0
+margin_bottom = 46.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_horizontal = 0
+size_flags_vertical = 4
+bbcode_enabled = true
+bbcode_text = "	Alku- ja loppuvarauksen ero"
+text = "	Alku- ja loppuvarauksen ero"
+fit_content_height = true
+
+[node name="balance_mwh" type="RichTextLabel" parent="report/report_points/ScrollContainer/VBoxContainer/balance_report"]
+margin_left = 204.0
+margin_top = 11.0
+margin_right = 798.0
+margin_bottom = 34.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+bbcode_text = "344 MWH"
+text = "344 MWH"
+fit_content_height = true
+
+[node name="difference_delta" type="RichTextLabel" parent="report/report_points/ScrollContainer/VBoxContainer/balance_report"]
+visible = false
+margin_left = 424.0
+margin_top = 15.0
+margin_right = 501.0
+margin_bottom = 46.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+bbcode_text = "0"
+text = "0"
+fit_content_height = true
+
+[node name="Ylimitoitus" type="HBoxContainer" parent="report/report_points/ScrollContainer/VBoxContainer"]
+margin_top = 191.0
+margin_right = 798.0
+margin_bottom = 222.0
+
+[node name="header" type="RichTextLabel" parent="report/report_points/ScrollContainer/VBoxContainer/Ylimitoitus"]
+margin_right = 340.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 340, 0 )
+size_flags_horizontal = 0
+size_flags_vertical = 4
+bbcode_enabled = true
+bbcode_text = "Mitoitus"
+text = "Mitoitus"
+fit_content_height = true
+
+[node name="oversizing_score" type="RichTextLabel" parent="report/report_points/ScrollContainer/VBoxContainer/Ylimitoitus"]
+margin_left = 344.0
+margin_right = 494.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 150, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 4
+bbcode_enabled = true
+bbcode_text = "0"
+text = "0"
+fit_content_height = true
+
+[node name="over_sizing_delta" type="RichTextLabel" parent="report/report_points/ScrollContainer/VBoxContainer/Ylimitoitus"]
+margin_left = 498.0
+margin_right = 798.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 300, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 4
+bbcode_enabled = true
+bbcode_text = "0"
+text = "0"
+fit_content_height = true
+
+[node name="sizing_report" type="HBoxContainer" parent="report/report_points/ScrollContainer/VBoxContainer"]
+margin_top = 237.0
+margin_right = 798.0
+margin_bottom = 260.0
+theme = ExtResource( 40 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="report/report_points/ScrollContainer/VBoxContainer/sizing_report"]
+margin_right = 200.0
+margin_bottom = 23.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_horizontal = 0
+size_flags_vertical = 4
+bbcode_enabled = true
+bbcode_text = "	Ylimitoitus"
+text = "	Ylimitoitus"
+fit_content_height = true
+
+[node name="sizing_m2" type="RichTextLabel" parent="report/report_points/ScrollContainer/VBoxContainer/sizing_report"]
+margin_left = 204.0
+margin_right = 798.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+bbcode_enabled = true
+bbcode_text = "0 m2"
+text = "0 m2"
+fit_content_height = true
+
+[node name="oversizing_delta" type="RichTextLabel" parent="report/report_points/ScrollContainer/VBoxContainer/sizing_report"]
+visible = false
+margin_left = 424.0
+margin_right = 501.0
+margin_bottom = 31.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+bbcode_enabled = true
+bbcode_text = "0"
+text = "0"
+fit_content_height = true
+
+[node name="SOC" type="HBoxContainer" parent="report/report_points/ScrollContainer/VBoxContainer"]
+margin_top = 275.0
+margin_right = 798.0
+margin_bottom = 306.0
+
+[node name="Header" type="RichTextLabel" parent="report/report_points/ScrollContainer/VBoxContainer/SOC"]
+margin_right = 340.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 340, 0 )
+size_flags_horizontal = 0
+size_flags_vertical = 4
+bbcode_enabled = true
+bbcode_text = "Akkukesto"
+text = "Akkukesto"
+fit_content_height = true
+
+[node name="soc_score" type="RichTextLabel" parent="report/report_points/ScrollContainer/VBoxContainer/SOC"]
+margin_left = 344.0
+margin_right = 494.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 150, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 4
+bbcode_enabled = true
+bbcode_text = "0"
+text = "0"
+fit_content_height = true
+
+[node name="soc_delta" type="RichTextLabel" parent="report/report_points/ScrollContainer/VBoxContainer/SOC"]
+margin_left = 498.0
+margin_right = 798.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 300, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 4
+bbcode_enabled = true
+bbcode_text = "0"
+text = "0"
+fit_content_height = true
+
+[node name="soc_report" type="HBoxContainer" parent="report/report_points/ScrollContainer/VBoxContainer"]
+margin_top = 321.0
+margin_right = 798.0
+margin_bottom = 367.0
+theme = ExtResource( 40 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="report/report_points/ScrollContainer/VBoxContainer/soc_report"]
+margin_right = 200.0
+margin_bottom = 46.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_horizontal = 0
+size_flags_vertical = 4
+bbcode_enabled = true
+bbcode_text = "	Pienin varaustila (SOC) vuoden aikana"
+text = "	Pienin varaustila (SOC) vuoden aikana"
+fit_content_height = true
+
+[node name="soc_percentage" type="RichTextLabel" parent="report/report_points/ScrollContainer/VBoxContainer/soc_report"]
+margin_left = 204.0
+margin_top = 11.0
+margin_right = 798.0
+margin_bottom = 34.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+bbcode_enabled = true
+bbcode_text = "0 %"
+text = "0 %"
+fit_content_height = true
+
+[node name="soc_delta" type="RichTextLabel" parent="report/report_points/ScrollContainer/VBoxContainer/soc_report"]
+visible = false
+margin_left = 424.0
+margin_top = 15.0
+margin_right = 501.0
+margin_bottom = 46.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+bbcode_enabled = true
+bbcode_text = "0"
+text = "0"
+fit_content_height = true
+
+[node name="feedback_header" type="HBoxContainer" parent="report/report_points/ScrollContainer/VBoxContainer"]
+margin_top = 382.0
+margin_right = 798.0
+margin_bottom = 413.0
+
+[node name="feedback_header" type="RichTextLabel" parent="report/report_points/ScrollContainer/VBoxContainer/feedback_header"]
+margin_right = 650.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 650, 0 )
+size_flags_vertical = 4
+bbcode_enabled = true
+bbcode_text = "Palaute"
+text = "Palaute"
+fit_content_height = true
+
+[node name="feedback_body" type="HBoxContainer" parent="report/report_points/ScrollContainer/VBoxContainer"]
+margin_top = 428.0
+margin_right = 798.0
+margin_bottom = 676.0
+
+[node name="feedback" type="RichTextLabel" parent="report/report_points/ScrollContainer/VBoxContainer/feedback_body"]
+margin_right = 650.0
+margin_bottom = 248.0
+rect_min_size = Vector2( 650, 0 )
+size_flags_vertical = 4
+bbcode_enabled = true
+bbcode_text = "Mitoitus voi tarkoittaa joko järjestelmän ali- tai ylimitoitusta. Jos järjestelmä on alimitoitettu, sähköä joudutaan hankkimaan verkosta tai purkamalla akkuun varastointunutta energiaa. Vastaavasti ylimitoitetussa järjestelmässä ylijäämäsähköä on joko syötettävä verkkoon tai johdettava maahan. Lisää tai vähennä aurinkokeräinpaneelin pinta-alaa tarvittaessa seuraavaan projektiin."
+text = "Mitoitus voi tarkoittaa joko järjestelmän ali- tai ylimitoitusta. Jos järjestelmä on alimitoitettu, sähköä joudutaan hankkimaan verkosta tai purkamalla akkuun varastointunutta energiaa. Vastaavasti ylimitoitetussa järjestelmässä ylijäämäsähköä on joko syötettävä verkkoon tai johdettava maahan. Lisää tai vähennä aurinkokeräinpaneelin pinta-alaa tarvittaessa seuraavaan projektiin."
+fit_content_height = true
+
+[node name="HSeparator" type="HSeparator" parent="report/report_points/ScrollContainer/VBoxContainer"]
+margin_top = 691.0
+margin_right = 650.0
+margin_bottom = 695.0
+rect_min_size = Vector2( 650, 0 )
+size_flags_horizontal = 0
+
+[node name="HBoxContainer8" type="HBoxContainer" parent="report/report_points/ScrollContainer/VBoxContainer"]
+margin_top = 710.0
+margin_right = 798.0
+margin_bottom = 741.0
+
+[node name="investment_header" type="RichTextLabel" parent="report/report_points/ScrollContainer/VBoxContainer/HBoxContainer8"]
+margin_right = 340.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 340, 0 )
+size_flags_horizontal = 0
+size_flags_vertical = 4
+bbcode_enabled = true
+bbcode_text = "Investoinnit"
+text = "Investoinnit"
+fit_content_height = true
+
+[node name="investment" type="RichTextLabel" parent="report/report_points/ScrollContainer/VBoxContainer/HBoxContainer8"]
+margin_left = 344.0
+margin_right = 798.0
+margin_bottom = 31.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+bbcode_enabled = true
+bbcode_text = "0"
+text = "0"
+fit_content_height = true
+
+[node name="HBoxContainer9" type="HBoxContainer" parent="report/report_points/ScrollContainer/VBoxContainer"]
+margin_top = 756.0
+margin_right = 798.0
+margin_bottom = 787.0
+
+[node name="tries_header" type="RichTextLabel" parent="report/report_points/ScrollContainer/VBoxContainer/HBoxContainer9"]
+margin_right = 340.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 340, 0 )
+size_flags_horizontal = 0
+size_flags_vertical = 4
+bbcode_enabled = true
+bbcode_text = "Käytetyt vuorot"
+text = "Käytetyt vuorot"
+fit_content_height = true
+
+[node name="tries" type="RichTextLabel" parent="report/report_points/ScrollContainer/VBoxContainer/HBoxContainer9"]
+margin_left = 344.0
+margin_right = 798.0
+margin_bottom = 31.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+bbcode_enabled = true
+bbcode_text = "0"
+text = "0"
+fit_content_height = true
+
+[node name="Score" type="HBoxContainer" parent="report/report_points/ScrollContainer/VBoxContainer"]
+margin_top = 802.0
+margin_right = 798.0
+margin_bottom = 833.0
+
+[node name="points_header" type="RichTextLabel" parent="report/report_points/ScrollContainer/VBoxContainer/Score"]
+margin_right = 340.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 340, 0 )
+size_flags_horizontal = 0
+size_flags_vertical = 4
+bbcode_enabled = true
+bbcode_text = "PISTEET YHTEENSÄ"
+text = "PISTEET YHTEENSÄ"
+fit_content_height = true
+
+[node name="points2" type="RichTextLabel" parent="report/report_points/ScrollContainer/VBoxContainer/Score"]
+visible = false
+margin_left = 344.0
+margin_right = 494.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 150, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 4
+bbcode_enabled = true
+fit_content_height = true
+
+[node name="player_score" type="RichTextLabel" parent="report/report_points/ScrollContainer/VBoxContainer/Score"]
+margin_left = 344.0
+margin_right = 798.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 300, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 4
+bbcode_enabled = true
+bbcode_text = "0"
+text = "0"
+fit_content_height = true
+
+[node name="ok_button" type="HBoxContainer" parent="report/report_points/ScrollContainer/VBoxContainer"]
+margin_top = 848.0
+margin_right = 798.0
+margin_bottom = 882.0
+
+[node name="points_header" type="RichTextLabel" parent="report/report_points/ScrollContainer/VBoxContainer/ok_button"]
+margin_top = 1.0
+margin_right = 700.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 700, 0 )
+size_flags_horizontal = 0
+size_flags_vertical = 4
+bbcode_enabled = true
+fit_content_height = true
+
+[node name="points_report_ok_button" type="Button" parent="report/report_points/ScrollContainer/VBoxContainer/ok_button"]
+margin_left = 704.0
+margin_right = 754.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 50, 30 )
+rect_pivot_offset = Vector2( 25, 20 )
+theme = ExtResource( 37 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "OK!"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="report/report_points/ScrollContainer/VBoxContainer/ok_button/points_report_ok_button"]
+autoplay = "size_pump"
+anims/RESET = SubResource( 17 )
+anims/size_pump = SubResource( 18 )
+
+[node name="player_score" type="RichTextLabel" parent="report/report_points/ScrollContainer/VBoxContainer/ok_button"]
+margin_left = 758.0
+margin_top = 1.0
+margin_right = 798.0
+margin_bottom = 32.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+bbcode_enabled = true
+fit_content_height = true
+
+[node name="scroll_bar" type="VScrollBar" parent="report"]
+visible = false
+margin_left = 858.0
+margin_top = 55.0
+margin_right = 870.0
+margin_bottom = 453.0
+rect_pivot_offset = Vector2( 6, 199 )
+theme = ExtResource( 8 )
+custom_styles/grabber = SubResource( 23 )
+max_value = 600.0
+step = 25.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="report/scroll_bar"]
+anims/RESET = SubResource( 20 )
+anims/size_pump = SubResource( 21 )
+
+[node name="stats_ui" type="Panel" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -112.0
+theme = ExtResource( 8 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="stats_ui"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 34.0
+margin_top = 25.0
+margin_right = -28.0
+margin_bottom = -23.0
+
+[node name="funds_icon" type="TextureRect" parent="stats_ui/HBoxContainer"]
+margin_right = 64.0
+margin_bottom = 64.0
+rect_pivot_offset = Vector2( 32, 32 )
+hint_tooltip = "Jäljellä oleva budjetti"
+texture = ExtResource( 5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="stats_ui/HBoxContainer/funds_icon"]
+anims/size_pump = SubResource( 8 )
+
+[node name="funds" type="RichTextLabel" parent="stats_ui/HBoxContainer"]
+margin_left = 68.0
+margin_top = 9.0
+margin_right = 318.0
+margin_bottom = 55.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+bbcode_enabled = true
+bbcode_text = "0
+"
+text = "0
+"
+fit_content_height = true
+
+[node name="energy_production_icon" type="TextureRect" parent="stats_ui/HBoxContainer"]
+margin_left = 322.0
+margin_right = 386.0
+margin_bottom = 64.0
+rect_pivot_offset = Vector2( 32, 32 )
+hint_tooltip = "Aurinkokeräinten pinta-ala"
+texture = ExtResource( 6 )
+
+[node name="energy_production" type="RichTextLabel" parent="stats_ui/HBoxContainer"]
+margin_left = 390.0
+margin_top = 20.0
+margin_right = 640.0
+margin_bottom = 43.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+bbcode_enabled = true
+bbcode_text = "0"
+text = "0"
+fit_content_height = true
+
+[node name="energy_reserve_icon" type="TextureRect" parent="stats_ui/HBoxContainer"]
+margin_left = 644.0
+margin_right = 708.0
+margin_bottom = 64.0
+hint_tooltip = "Akuston lähtökapasiteetti"
+texture = ExtResource( 10 )
+
+[node name="energy_reserve" type="RichTextLabel" parent="stats_ui/HBoxContainer"]
+margin_left = 712.0
+margin_top = 20.0
+margin_right = 962.0
+margin_bottom = 43.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+bbcode_enabled = true
+bbcode_text = "0"
+text = "0"
+fit_content_height = true
+
+[node name="energy_demand_icon" type="TextureRect" parent="stats_ui/HBoxContainer"]
+visible = false
+margin_left = 941.0
+margin_right = 1005.0
+margin_bottom = 64.0
+texture = ExtResource( 4 )
+
+[node name="energy_demand" type="RichTextLabel" parent="stats_ui/HBoxContainer"]
+visible = false
+margin_left = 824.0
+margin_top = 20.0
+margin_right = 1005.0
+margin_bottom = 43.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+bbcode_enabled = true
+bbcode_text = "0"
+text = "0"
+fit_content_height = true
+
+[node name="population_icon" type="TextureRect" parent="stats_ui/HBoxContainer"]
+visible = false
+margin_left = 941.0
+margin_right = 1005.0
+margin_bottom = 64.0
+texture = ExtResource( 7 )
+
+[node name="population" type="RichTextLabel" parent="stats_ui/HBoxContainer"]
+visible = false
+margin_left = 824.0
+margin_top = 20.0
+margin_right = 1005.0
+margin_bottom = 43.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+bbcode_enabled = true
+bbcode_text = "0"
+text = "0"
+fit_content_height = true
+
+[node name="next_turn" type="Button" parent="."]
+visible = false
+margin_left = 893.0
+margin_top = 528.0
+margin_right = 1024.0
+margin_bottom = 601.0
+text = "SEURAAVA VUORO"
+
+[node name="infra_ghost" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.784314 )
+script = ExtResource( 25 )
+
+[node name="Onboarding" type="Node" parent="."]
+script = ExtResource( 30 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Onboarding"]
+anims/solar_panel_size_pump = SubResource( 4 )
+
+[node name="intro_dialogue_box" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -299.5
+margin_right = 512.0
+margin_bottom = 299.5
+theme = ExtResource( 8 )
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 32 )
+
+[node name="background_color" type="ColorRect" parent="intro_dialogue_box"]
+modulate = Color( 0, 0, 0, 0.627451 )
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -2.0
+margin_bottom = 1.0
+
+[node name="Panel" type="Panel" parent="intro_dialogue_box"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -345.0
+margin_top = -198.5
+margin_right = 346.0
+margin_bottom = -0.5
+
+[node name="TextureRect" type="TextureRect" parent="intro_dialogue_box/Panel"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -202.5
+margin_right = 128.0
+margin_bottom = -74.5
+rect_scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 34 )
+
+[node name="dialogue" type="Control" parent="intro_dialogue_box/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="0" type="RichTextLabel" parent="intro_dialogue_box/Panel/dialogue"]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -494.0
+margin_top = -70.0
+margin_right = -8.0
+margin_bottom = 92.0
+theme = ExtResource( 33 )
+bbcode_enabled = true
+bbcode_text = "[wave]Hei![/wave]
+Tervetuloa kolmannelle tasolle."
+text = "Hei!
+Tervetuloa kolmannelle tasolle."
+
+[node name="1" type="RichTextLabel" parent="intro_dialogue_box/Panel/dialogue"]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -494.0
+margin_top = -70.0
+margin_right = -8.0
+margin_bottom = 92.0
+theme = ExtResource( 33 )
+bbcode_enabled = true
+bbcode_text = "Täällä toteutat aurinkokylän rakentamisen.
+Käytössäsi on aurinkokeräinpaneeleja ja akkuja."
+text = "Täällä toteutat aurinkokylän rakentamisen.
+Käytössäsi on aurinkokeräinpaneeleja ja akkuja."
+
+[node name="5" type="RichTextLabel" parent="intro_dialogue_box/Panel/dialogue"]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -494.0
+margin_top = -70.0
+margin_right = -34.0
+margin_bottom = 92.0
+theme = ExtResource( 33 )
+bbcode_enabled = true
+bbcode_text = "Aurinkokeräinpaneelit keräävät sinulle energiaa. Akkuja lisäämällä nostat kyläsi akuston lähtökapasiteettia, joka tarkoittaa tässä akuston sisältämää energiamäärää vuoden alussa."
+text = "Aurinkokeräinpaneelit keräävät sinulle energiaa. Akkuja lisäämällä nostat kyläsi akuston lähtökapasiteettia, joka tarkoittaa tässä akuston sisältämää energiamäärää vuoden alussa."
+
+[node name="2" type="RichTextLabel" parent="intro_dialogue_box/Panel/dialogue"]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -494.0
+margin_top = -70.0
+margin_right = -39.0
+margin_bottom = 92.0
+theme = ExtResource( 33 )
+bbcode_enabled = true
+bbcode_text = "Rakentaminen toteutetaan peräkkäisinä projekteina."
+text = "Rakentaminen toteutetaan peräkkäisinä projekteina."
+
+[node name="7" type="RichTextLabel" parent="intro_dialogue_box/Panel/dialogue"]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -494.0
+margin_top = -70.0
+margin_right = -39.0
+margin_bottom = 92.0
+theme = ExtResource( 33 )
+bbcode_enabled = true
+bbcode_text = "Jokaisessa projektissa lisäät järjestelmään keräinpaneeleja tai akkuja tai molempia. Voit myös purkaa jo rakennettua kapasiteettia tarvittaessa."
+text = "Jokaisessa projektissa lisäät järjestelmään keräinpaneeleja tai akkuja tai molempia. Voit myös purkaa jo rakennettua kapasiteettia tarvittaessa."
+
+[node name="3" type="RichTextLabel" parent="intro_dialogue_box/Panel/dialogue"]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -494.0
+margin_top = -70.0
+margin_right = -19.0
+margin_bottom = 92.0
+theme = ExtResource( 33 )
+bbcode_enabled = true
+bbcode_text = "Sitten minä simuloin käyttäen aurinkokeräinpaneelien määrää ja akuston lähtökapasiteettia sen miltä kylässäsi näyttää vuoden päästä."
+text = "Sitten minä simuloin käyttäen aurinkokeräinpaneelien määrää ja akuston lähtökapasiteettia sen miltä kylässäsi näyttää vuoden päästä."
+
+[node name="6" type="RichTextLabel" parent="intro_dialogue_box/Panel/dialogue"]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -494.0
+margin_top = -70.0
+margin_right = -31.0
+margin_bottom = 92.0
+theme = ExtResource( 33 )
+bbcode_enabled = true
+bbcode_text = "Yhdessä ne määrittävät sen kuinka omavarainen kyläsi on. 
+Muista - mitä omavaraisempi sen parempi!"
+text = "Yhdessä ne määrittävät sen kuinka omavarainen kyläsi on. 
+Muista - mitä omavaraisempi sen parempi!"
+
+[node name="4" type="RichTextLabel" parent="intro_dialogue_box/Panel/dialogue"]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -498.0
+margin_top = -70.0
+margin_right = -31.0
+margin_bottom = 92.0
+theme = ExtResource( 33 )
+bbcode_enabled = true
+bbcode_text = "Paremmuudesta puheenollen. Saat pisteitä neljän eri kategorian perusteella. Tutustu seuraavaksi rauhassa pisteytykseen."
+text = "Paremmuudesta puheenollen. Saat pisteitä neljän eri kategorian perusteella. Tutustu seuraavaksi rauhassa pisteytykseen."
+
+[node name="next_dialogue" type="Button" parent="intro_dialogue_box/Panel"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 293.5
+margin_top = -24.5
+margin_right = 388.5
+margin_bottom = 18.5
+rect_pivot_offset = Vector2( 47, 21 )
+text = "jatka"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="intro_dialogue_box/Panel/next_dialogue"]
+autoplay = "button_size_pump"
+anims/button_size_pump = SubResource( 6 )
+
+[node name="outro_dialogue_box" type="Panel" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -299.5
+margin_right = 512.0
+margin_bottom = 299.5
+theme = ExtResource( 8 )
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 32 )
+
+[node name="background_color" type="ColorRect" parent="outro_dialogue_box"]
+modulate = Color( 0, 0, 0, 0.627451 )
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Panel" type="Panel" parent="outro_dialogue_box"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -345.0
+margin_top = -198.5
+margin_right = 346.0
+margin_bottom = -0.5
+
+[node name="TextureRect" type="TextureRect" parent="outro_dialogue_box/Panel"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -202.5
+margin_right = 128.0
+margin_bottom = -74.5
+rect_scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 34 )
+
+[node name="dialogue" type="Control" parent="outro_dialogue_box/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="0" type="RichTextLabel" parent="outro_dialogue_box/Panel/dialogue"]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -494.0
+margin_top = -70.0
+margin_right = -8.0
+margin_bottom = 92.0
+theme = ExtResource( 33 )
+bbcode_enabled = true
+bbcode_text = "[wave]No niin![/wave]
+Täällähän alkaa näyttää valmiilta."
+text = "No niin!
+Täällähän alkaa näyttää valmiilta."
+
+[node name="1" type="RichTextLabel" parent="outro_dialogue_box/Panel/dialogue"]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -494.0
+margin_top = -70.0
+margin_right = -8.0
+margin_bottom = 92.0
+theme = ExtResource( 33 )
+bbcode_enabled = true
+bbcode_text = "Olet siinä vaiheessa että suosittelen harkitsemaan pisteiden lähettämistä leaderboardiin."
+text = "Olet siinä vaiheessa että suosittelen harkitsemaan pisteiden lähettämistä leaderboardiin."
+
+[node name="2" type="RichTextLabel" parent="outro_dialogue_box/Panel/dialogue"]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -494.0
+margin_top = -70.0
+margin_right = -8.0
+margin_bottom = 92.0
+theme = ExtResource( 33 )
+bbcode_enabled = true
+bbcode_text = "Toki en aio estää sinua jatkamasta.
+Kiitos kun pelasit kanssani!"
+text = "Toki en aio estää sinua jatkamasta.
+Kiitos kun pelasit kanssani!"
+
+[node name="next_dialogue" type="Button" parent="outro_dialogue_box/Panel"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 293.5
+margin_top = -24.5
+margin_right = 388.5
+margin_bottom = 18.5
+rect_pivot_offset = Vector2( 47, 21 )
+text = "jatka"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="outro_dialogue_box/Panel/next_dialogue"]
+autoplay = "button_size_pump"
+anims/button_size_pump = SubResource( 10 )
+
+[node name="info_button_dialogue_box" type="Panel" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -299.5
+margin_right = 512.0
+margin_bottom = 299.5
+theme = ExtResource( 8 )
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 32 )
+
+[node name="background_color" type="ColorRect" parent="info_button_dialogue_box"]
+visible = false
+modulate = Color( 0, 0, 0, 0.627451 )
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Panel" type="Panel" parent="info_button_dialogue_box"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -345.0
+margin_top = -198.5
+margin_right = 346.0
+margin_bottom = -0.5
+
+[node name="TextureRect" type="TextureRect" parent="info_button_dialogue_box/Panel"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -202.5
+margin_right = 128.0
+margin_bottom = -74.5
+rect_scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 34 )
+
+[node name="dialogue" type="Control" parent="info_button_dialogue_box/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="0" type="RichTextLabel" parent="info_button_dialogue_box/Panel/dialogue"]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -494.0
+margin_top = -70.0
+margin_right = -8.0
+margin_bottom = 92.0
+theme = ExtResource( 33 )
+bbcode_enabled = true
+bbcode_text = "Olitpas nopea! Yleensä pelaajilla kestää ohjeiden lukemisessa todella kauan.
+Jos haluat lukea ne uudelleen voit aina klikata kysymysmerkkiä tuolta nurkasta!"
+text = "Olitpas nopea! Yleensä pelaajilla kestää ohjeiden lukemisessa todella kauan.
+Jos haluat lukea ne uudelleen voit aina klikata kysymysmerkkiä tuolta nurkasta!"
+
+[node name="1" type="RichTextLabel" parent="info_button_dialogue_box/Panel/dialogue"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -494.0
+margin_top = -70.0
+margin_right = -8.0
+margin_bottom = 92.0
+theme = ExtResource( 33 )
+bbcode_enabled = true
+bbcode_text = "Uskon että olet nyt valmis aloittamaan rakentamisen! Onnea matkaan ja mukavia pelihetkiä!"
+text = "Uskon että olet nyt valmis aloittamaan rakentamisen! Onnea matkaan ja mukavia pelihetkiä!"
+
+[node name="next_dialogue" type="Button" parent="info_button_dialogue_box/Panel"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 293.5
+margin_top = -24.5
+margin_right = 388.5
+margin_bottom = 18.5
+rect_pivot_offset = Vector2( 47, 21 )
+text = "jatka"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="info_button_dialogue_box/Panel/next_dialogue"]
+autoplay = "button_size_pump"
+anims/button_size_pump = SubResource( 6 )
+
+[node name="simple_tool_dialogue" type="Panel" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -299.5
+margin_right = 512.0
+margin_bottom = 299.5
+theme = ExtResource( 8 )
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 32 )
+
+[node name="background_color" type="ColorRect" parent="simple_tool_dialogue"]
+visible = false
+modulate = Color( 0, 0, 0, 0.627451 )
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Panel" type="Panel" parent="simple_tool_dialogue"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -345.0
+margin_top = -198.5
+margin_right = 346.0
+margin_bottom = -0.5
+
+[node name="TextureRect" type="TextureRect" parent="simple_tool_dialogue/Panel"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -202.5
+margin_right = 128.0
+margin_bottom = -74.5
+rect_scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 34 )
+
+[node name="dialogue" type="Control" parent="simple_tool_dialogue/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="0" type="RichTextLabel" parent="simple_tool_dialogue/Panel/dialogue"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -494.0
+margin_top = -70.0
+margin_right = -8.0
+margin_bottom = 92.0
+theme = ExtResource( 33 )
+bbcode_enabled = true
+bbcode_text = "Uskon että olet valmis aloittamaan rakentamisen! Onnea matkaan ja mukavia pelihetkiä!"
+text = "Uskon että olet valmis aloittamaan rakentamisen! Onnea matkaan ja mukavia pelihetkiä!"
+
+[node name="next_dialogue" type="Button" parent="simple_tool_dialogue/Panel"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 293.5
+margin_top = -24.5
+margin_right = 388.5
+margin_bottom = 18.5
+rect_pivot_offset = Vector2( 47, 21 )
+text = "jatka"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="simple_tool_dialogue/Panel/next_dialogue"]
+autoplay = "button_size_pump"
+anims/button_size_pump = SubResource( 15 )
+
+[node name="tool_dialogue_box" type="Panel" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -345.5
+margin_top = -196.0
+margin_right = 345.5
+margin_bottom = -2.0
+theme = ExtResource( 8 )
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 32 )
+
+[node name="background_color" type="ColorRect" parent="tool_dialogue_box"]
+modulate = Color( 0, 0, 0, 0 )
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -181.0
+margin_top = -145.0
+margin_right = 214.0
+margin_bottom = 323.0
+
+[node name="Panel" type="Panel" parent="tool_dialogue_box"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -345.5
+margin_top = -99.0
+margin_right = 345.5
+margin_bottom = 99.0
+
+[node name="TextureRect" type="TextureRect" parent="tool_dialogue_box/Panel"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 691.0
+margin_top = -202.5
+margin_right = 819.0
+margin_bottom = -74.5
+rect_scale = Vector2( -1.5, 1.5 )
+texture = ExtResource( 34 )
+
+[node name="dialogue" type="Control" parent="tool_dialogue_box/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="0" type="RichTextLabel" parent="tool_dialogue_box/Panel/dialogue"]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -670.0
+margin_top = -70.0
+margin_right = -184.0
+margin_bottom = 92.0
+theme = ExtResource( 33 )
+bbcode_enabled = true
+bbcode_text = "Klikkaa aurinkokeräinpaneelia ja voit lisätä sen kylään."
+text = "Klikkaa aurinkokeräinpaneelia ja voit lisätä sen kylään."
+
+[node name="1" type="RichTextLabel" parent="tool_dialogue_box/Panel/dialogue"]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -670.0
+margin_top = -70.0
+margin_right = -184.0
+margin_bottom = 92.0
+theme = ExtResource( 33 )
+bbcode_enabled = true
+bbcode_text = "Nyt sinulla on aurinkokeräinpaneeli valittuna. Kokeile mennä askel taaksepäin painamalla joko hiiren oikealla tai ESC-näppäintä."
+text = "Nyt sinulla on aurinkokeräinpaneeli valittuna. Kokeile mennä askel taaksepäin painamalla joko hiiren oikealla tai ESC-näppäintä."
+
+[node name="2" type="RichTextLabel" parent="tool_dialogue_box/Panel/dialogue"]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -670.0
+margin_top = -70.0
+margin_right = -184.0
+margin_bottom = 92.0
+theme = ExtResource( 33 )
+bbcode_enabled = true
+bbcode_text = "Heh, halusin vain näyttää tämän sinulle.
+Valitse aurinkokeräinpaneeli uudelleen."
+text = "Heh, halusin vain näyttää tämän sinulle.
+Valitse aurinkokeräinpaneeli uudelleen."
+
+[node name="3" type="RichTextLabel" parent="tool_dialogue_box/Panel/dialogue"]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -670.0
+margin_top = -70.0
+margin_right = -184.0
+margin_bottom = 92.0
+theme = ExtResource( 33 )
+bbcode_enabled = true
+bbcode_text = "Hienoa! Aurinkokeräinpaneelin haamukuva auttaa sinua hahmottamaan sille paikan.
+Sijoita se paikalleen klikkaamalla."
+text = "Hienoa! Aurinkokeräinpaneelin haamukuva auttaa sinua hahmottamaan sille paikan.
+Sijoita se paikalleen klikkaamalla."
+
+[node name="4" type="RichTextLabel" parent="tool_dialogue_box/Panel/dialogue"]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -670.0
+margin_top = -70.0
+margin_right = -184.0
+margin_bottom = 92.0
+theme = ExtResource( 33 )
+bbcode_enabled = true
+bbcode_text = "Valitse seuraavaksi aurinkokeräinpaneelin koko liukusäätimellä.
+Mitä isompi alue, sen kauemmin sen valmistuminen kestää!"
+text = "Valitse seuraavaksi aurinkokeräinpaneelin koko liukusäätimellä.
+Mitä isompi alue, sen kauemmin sen valmistuminen kestää!"
+
+[node name="5" type="RichTextLabel" parent="tool_dialogue_box/Panel/dialogue"]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -670.0
+margin_top = -70.0
+margin_right = -184.0
+margin_bottom = 92.0
+theme = ExtResource( 33 )
+bbcode_enabled = true
+bbcode_text = "Tehän olette etevä!
+Voit muuttaa alueen kokoa raahaamalla, hiiren rullalla tai nuolinäppäimillä.
+Kun valittu alue on mieleesi niin paina aloita-painiketta."
+text = "Tehän olette etevä!
+Voit muuttaa alueen kokoa raahaamalla, hiiren rullalla tai nuolinäppäimillä.
+Kun valittu alue on mieleesi niin paina aloita-painiketta."
+
+[node name="6" type="RichTextLabel" parent="tool_dialogue_box/Panel/dialogue"]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -670.0
+margin_top = -70.0
+margin_right = -184.0
+margin_bottom = 92.0
+theme = ExtResource( 33 )
+bbcode_enabled = true
+bbcode_text = "Nyt odotellaan että projekti valmistuu.
+Olen nopeuttanut tätä hiukan tälle ekalle kerralle, oikeasti tässä kestää kauemmin."
+text = "Nyt odotellaan että projekti valmistuu.
+Olen nopeuttanut tätä hiukan tälle ekalle kerralle, oikeasti tässä kestää kauemmin."
+
+[node name="7" type="RichTextLabel" parent="tool_dialogue_box/Panel/dialogue"]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -670.0
+margin_top = -70.0
+margin_right = -184.0
+margin_bottom = 92.0
+theme = ExtResource( 33 )
+bbcode_enabled = true
+bbcode_text = "Osaisinpa jonkin hyvän insinöörivitsin niin kertoisin sen sinulle nyt!"
+text = "Osaisinpa jonkin hyvän insinöörivitsin niin kertoisin sen sinulle nyt!"
+
+[node name="8" type="RichTextLabel" parent="tool_dialogue_box/Panel/dialogue"]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -670.0
+margin_top = -70.0
+margin_right = -184.0
+margin_bottom = 92.0
+theme = ExtResource( 33 )
+bbcode_enabled = true
+bbcode_text = "Valmista tuli!
+Tutustu seuraavaksi raporttiin ja jatka pelaamista.
+Mukavia pelihetkiä!"
+text = "Valmista tuli!
+Tutustu seuraavaksi raporttiin ja jatka pelaamista.
+Mukavia pelihetkiä!"
+
+[node name="next_dialogue" type="Button" parent="tool_dialogue_box/Panel"]
+visible = false
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 293.5
+margin_top = -24.5
+margin_right = 388.5
+margin_bottom = 18.5
+rect_pivot_offset = Vector2( 47, 21 )
+text = "jatka"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="tool_dialogue_box/Panel/next_dialogue"]
+autoplay = "button_size_pump"
+anims/button_size_pump = SubResource( 6 )
+
+[node name="click_blocker" type="ColorRect" parent="tool_dialogue_box/Panel"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 305.0
+margin_top = 300.0
+margin_right = 491.0
+margin_bottom = 389.0
+
+[node name="sc_button" type="Button" parent="tool_dialogue_box"]
+margin_left = 196.5
+margin_top = 296.0
+margin_right = 299.5
+margin_bottom = 394.0
+theme = ExtResource( 23 )
+
+[node name="save_and_quit" type="Node" parent="."]
+script = ExtResource( 35 )
+
+[node name="feedback" type="Node" parent="."]
+script = ExtResource( 36 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 128
+
+[node name="info_pop_up_window" parent="CanvasLayer" instance=ExtResource( 2 )]
+visible = false
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/info_pop_up_window/Panel" index="1"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -400.0
+margin_top = -171.0
+margin_right = 400.0
+margin_bottom = 235.0
+theme = ExtResource( 8 )
+scroll_horizontal_enabled = false
+
+[node name="info_text_body" type="RichTextLabel" parent="CanvasLayer/info_pop_up_window/Panel/ScrollContainer"]
+margin_right = 750.0
+margin_bottom = 1500.0
+rect_min_size = Vector2( 750, 1500 )
+bbcode_enabled = true
+bbcode_text = "OHJEET
+
+Projektit
+Rakentaminen tapahtuu vuoroissa. Voit lisätä kylääsi aurinkokeräinpaneeleja ja akkuja.
+
+Rakentaminen kuluttaa budjettiasi ja jos rahasi loppuvat kesken peli päättyy. Näet jokaisen rakenteilla olevan aurinkokeräinpaneelin ja akun alla arvioidun hintalapun. Painaessasi Rakenna-näppäintä peli kertoo sinulle riittävätkö rahasi ehdottomasi järjestelmän rakentamiseen.
+Mitä isomman aurinkokeräinpaneelin tai akun valitset, sitä enemmän sen rakentaminen kestää! Muuta valitsemasi resurssin kokoa sen alle ilmestyvällä liukusäätimellä. Säädintä voit liikuttaa raahamalla, hiiren rullalla tai nuolinäppäimillä.
+
+Rakentaessasi voit ottaa askeleita taaksepäin joko painamalla hiiren oikeaa näppäintä tai ESC-näppäintä.
+
+Jokaisen projektin päätyttyä saat raportin kyläsi tilanteesta. Raportista näet myös nykyiset pisteesi.
+Klikkaa jo rakenenttua aurinkokeräinpaneelia tai akkua ja voit muuttaa sen kokoa. Myös muuttaminen käyttää vuoron, mutta se ei maksa mitään!
+
+Pisteytys
+Saat pisteitä näiden neljän kategorian perusteella:
+
+Omavaraisuus
+Kuinka omavarainen rakentamasi kylä on, eli kuinka iso osa kylän käyttämästä energiasta tuotetaan itse.
+
+Mitoitus
+Tässä kategoriassa arvioidaan aurinkokeräinpaneelin mitoitusta. Alimitoitettu järjestelmä johtaa tarpeeseen hankkia sähköä verkosta. Ylimitoituksesta seuraa sähkön ylituotantoa, mikä tarkoittaa, että sähköä on joko toimitettava verkkoon, johdettava maahan tai akkukapasiteettia on kasvatettava. Mikään näistä ei ole energiaomavaraisuuden kannalta myönteinen asia.
+
+Tasapaino
+Tasapaino tarkoittaa erotusta akustoon varautuneen energiasisällön välillä vuoden alussa ja lopussa eli se ilmaisee, kuinka paljon ja mihin suuntaan akuston varaus on muuttunut vuoden aikana. Jos akuston energiasisältö on vuoden lopussa pienempi kuin alussa, se merkitsee sitä, ettei järjestelmä ole pidemmän päälle omavarainen.
+	
+Akkukesto
+Akustoa ei ole hyvä päästää täysin tyhjäksi, sillä se nopeuttaa akuston suorituskyvyn heikkenemistä ja lyhentää käyttöikää.
+	
+Näiden lisäksi pisteytykseen vaikuttaa käyttämäsi vuorojen määrä ja se pysytkö budjetissa!
+
+Tallentaminen ja lopetus
+Tallenna pelisi ovea tallennus-painikkeella, jonka jälkeen on turvallista sulkea välilehti jossa peli on auki. Voit sulkea pelin esimerkiksi rakennusprojektin ajaksi.
+Tärkeä huomio! Peli tallentuu selaimesi välimuistiin, eli jos tyhjennät välimuistin tai pelaat peliä tavalla jossa välimuistiin ei tallennu mitään (esimerkiksi Chrome-selaimen Incognito-tilassa) pelin tallennukset häviävät."
+text = "OHJEET
+
+Projektit
+Rakentaminen tapahtuu vuoroissa. Voit lisätä kylääsi aurinkokeräinpaneeleja ja akkuja.
+
+Rakentaminen kuluttaa budjettiasi ja jos rahasi loppuvat kesken peli päättyy. Näet jokaisen rakenteilla olevan aurinkokeräinpaneelin ja akun alla arvioidun hintalapun. Painaessasi Rakenna-näppäintä peli kertoo sinulle riittävätkö rahasi ehdottomasi järjestelmän rakentamiseen.
+Mitä isomman aurinkokeräinpaneelin tai akun valitset, sitä enemmän sen rakentaminen kestää! Muuta valitsemasi resurssin kokoa sen alle ilmestyvällä liukusäätimellä. Säädintä voit liikuttaa raahamalla, hiiren rullalla tai nuolinäppäimillä.
+
+Rakentaessasi voit ottaa askeleita taaksepäin joko painamalla hiiren oikeaa näppäintä tai ESC-näppäintä.
+
+Jokaisen projektin päätyttyä saat raportin kyläsi tilanteesta. Raportista näet myös nykyiset pisteesi.
+Klikkaa jo rakenenttua aurinkokeräinpaneelia tai akkua ja voit muuttaa sen kokoa. Myös muuttaminen käyttää vuoron, mutta se ei maksa mitään!
+
+Pisteytys
+Saat pisteitä näiden neljän kategorian perusteella:
+
+Omavaraisuus
+Kuinka omavarainen rakentamasi kylä on, eli kuinka iso osa kylän käyttämästä energiasta tuotetaan itse.
+
+Mitoitus
+Tässä kategoriassa arvioidaan aurinkokeräinpaneelin mitoitusta. Alimitoitettu järjestelmä johtaa tarpeeseen hankkia sähköä verkosta. Ylimitoituksesta seuraa sähkön ylituotantoa, mikä tarkoittaa, että sähköä on joko toimitettava verkkoon, johdettava maahan tai akkukapasiteettia on kasvatettava. Mikään näistä ei ole energiaomavaraisuuden kannalta myönteinen asia.
+
+Tasapaino
+Tasapaino tarkoittaa erotusta akustoon varautuneen energiasisällön välillä vuoden alussa ja lopussa eli se ilmaisee, kuinka paljon ja mihin suuntaan akuston varaus on muuttunut vuoden aikana. Jos akuston energiasisältö on vuoden lopussa pienempi kuin alussa, se merkitsee sitä, ettei järjestelmä ole pidemmän päälle omavarainen.
+	
+Akkukesto
+Akustoa ei ole hyvä päästää täysin tyhjäksi, sillä se nopeuttaa akuston suorituskyvyn heikkenemistä ja lyhentää käyttöikää.
+	
+Näiden lisäksi pisteytykseen vaikuttaa käyttämäsi vuorojen määrä ja se pysytkö budjetissa!
+
+Tallentaminen ja lopetus
+Tallenna pelisi ovea tallennus-painikkeella, jonka jälkeen on turvallista sulkea välilehti jossa peli on auki. Voit sulkea pelin esimerkiksi rakennusprojektin ajaksi.
+Tärkeä huomio! Peli tallentuu selaimesi välimuistiin, eli jos tyhjennät välimuistin tai pelaat peliä tavalla jossa välimuistiin ei tallennu mitään (esimerkiksi Chrome-selaimen Incognito-tilassa) pelin tallennukset häviävät."
+scroll_active = false
+
+[node name="exit_level_dialogue" type="Control" parent="CanvasLayer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -6.10352e-05
+
+[node name="bg" type="Panel" parent="CanvasLayer/exit_level_dialogue"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 8 )
+
+[node name="dialogue_box" type="Panel" parent="CanvasLayer/exit_level_dialogue"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -299.5
+margin_right = 512.0
+margin_bottom = 299.5
+theme = ExtResource( 8 )
+custom_styles/panel = SubResource( 26 )
+script = ExtResource( 32 )
+
+[node name="background_color" type="ColorRect" parent="CanvasLayer/exit_level_dialogue/dialogue_box"]
+modulate = Color( 0, 0, 0, 0.627451 )
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Panel" type="Panel" parent="CanvasLayer/exit_level_dialogue/dialogue_box"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -345.0
+margin_top = -198.5
+margin_right = 346.0
+margin_bottom = -0.5
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/exit_level_dialogue/dialogue_box/Panel"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -202.5
+margin_right = 128.0
+margin_bottom = -74.5
+rect_scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 34 )
+
+[node name="dialogue" type="Control" parent="CanvasLayer/exit_level_dialogue/dialogue_box/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="0" type="RichTextLabel" parent="CanvasLayer/exit_level_dialogue/dialogue_box/Panel/dialogue"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -494.0
+margin_top = -80.0
+margin_right = -8.0
+margin_bottom = 87.0
+theme = ExtResource( 33 )
+bbcode_enabled = true
+bbcode_text = "Poistuminen tarkoittaa ettet voi enää jatkaa pelaamista, vaan siirryt lähettämään pisteesi leaderboardiin.
+Jos olet tallentanut ja haluat jatkaa myöhemmin, voit vain sulkea välilehden!"
+text = "Poistuminen tarkoittaa ettet voi enää jatkaa pelaamista, vaan siirryt lähettämään pisteesi leaderboardiin.
+Jos olet tallentanut ja haluat jatkaa myöhemmin, voit vain sulkea välilehden!"
+
+[node name="1" type="RichTextLabel" parent="CanvasLayer/exit_level_dialogue/dialogue_box/Panel/dialogue"]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -494.0
+margin_top = -70.0
+margin_right = -8.0
+margin_bottom = 92.0
+theme = ExtResource( 33 )
+bbcode_enabled = true
+bbcode_text = "Haluatko todella lopettaa ja siirtyä lähettämään pisteesi leaderboardiin?"
+text = "Haluatko todella lopettaa ja siirtyä lähettämään pisteesi leaderboardiin?"
+
+[node name="hack" type="RichTextLabel" parent="CanvasLayer/exit_level_dialogue/dialogue_box/Panel/dialogue"]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -494.0
+margin_top = -70.0
+margin_right = -8.0
+margin_bottom = 92.0
+theme = ExtResource( 33 )
+bbcode_enabled = true
+bbcode_text = "Haluatko todella lopettaa ja siirtyä lähettämään pisteesi leaderboardiin?"
+text = "Haluatko todella lopettaa ja siirtyä lähettämään pisteesi leaderboardiin?"
+
+[node name="next_dialogue" type="Button" parent="CanvasLayer/exit_level_dialogue/dialogue_box/Panel"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 293.5
+margin_top = -24.5
+margin_right = 388.5
+margin_bottom = 18.5
+rect_pivot_offset = Vector2( 47, 21 )
+text = "jatka"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/exit_level_dialogue/dialogue_box/Panel/next_dialogue"]
+autoplay = "button_size_pump"
+anims/button_size_pump = SubResource( 27 )
+
+[node name="yes" type="Button" parent="CanvasLayer/exit_level_dialogue/dialogue_box/Panel"]
+visible = false
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 32.5
+margin_top = -27.0
+margin_right = 127.5
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 47, 21 )
+text = "kyllä"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/exit_level_dialogue/dialogue_box/Panel/yes"]
+autoplay = "button_size_pump"
+anims/button_size_pump = SubResource( 28 )
+
+[node name="no" type="Button" parent="CanvasLayer/exit_level_dialogue/dialogue_box/Panel"]
+visible = false
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -135.5
+margin_top = -27.0
+margin_right = -40.5
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 47, 21 )
+text = "ei"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/exit_level_dialogue/dialogue_box/Panel/no"]
+autoplay = "button_size_pump"
+anims/button_size_pump = SubResource( 29 )
+
+[node name="naming" type="Control" parent="CanvasLayer/exit_level_dialogue/dialogue_box"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+theme = ExtResource( 8 )
+
+[node name="enter_name" type="LineEdit" parent="CanvasLayer/exit_level_dialogue/dialogue_box/naming"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 325.5
+margin_top = 326.5
+margin_right = 658.5
+margin_bottom = 424.5
+caret_blink = true
+caret_blink_speed = 0.5
+
+[node name="apply_name" type="Button" parent="CanvasLayer/exit_level_dialogue/dialogue_box/naming"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 432.5
+margin_top = 425.0
+margin_right = 527.5
+margin_bottom = 468.0
+rect_pivot_offset = Vector2( 47, 21 )
+theme = ExtResource( 8 )
+text = "ok!"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/exit_level_dialogue/dialogue_box/naming/apply_name"]
+anims/RESET = SubResource( 30 )
+anims/size_pump = SubResource( 31 )
+
+[node name="save_game" type="TextureButton" parent="CanvasLayer/exit_level_dialogue"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -32.0
+margin_top = 64.0
+margin_right = 32.0
+margin_bottom = 128.0
+rect_pivot_offset = Vector2( 32, 32 )
+texture_normal = ExtResource( 31 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/exit_level_dialogue/save_game"]
+autoplay = "size_pump"
+anims/RESET = SubResource( 32 )
+anims/size_pump = SubResource( 33 )
+
+[connection signal="mouse_entered" from="TextureRect" to="mouse_interaction" method="_on_TextureRect_mouse_entered"]
+[connection signal="mouse_exited" from="TextureRect" to="mouse_interaction" method="_on_TextureRect_mouse_exited"]
+[connection signal="infra_modified" from="mouse_interaction" to="." method="_on_mouse_interaction_infra_modified"]
+[connection signal="infra_modified" from="mouse_interaction" to="infra_panel" method="_on_mouse_interaction_infra_modified"]
+[connection signal="infra_placed" from="mouse_interaction" to="." method="_on_mouse_interaction_infra_placed"]
+[connection signal="infra_placed" from="mouse_interaction" to="infra_panel" method="_on_mouse_interaction_infra_placed"]
+[connection signal="step_back" from="mouse_interaction" to="." method="_on_mouse_interaction_step_back"]
+[connection signal="step_back" from="mouse_interaction" to="infra_panel" method="_on_mouse_interaction_step_back"]
+[connection signal="builds_reset" from="infra_panel" to="." method="_on_infra_panel_builds_reset"]
+[connection signal="pressed" from="infra_panel/HBoxContainer/house_button" to="infra_panel" method="_on_house_button_pressed"]
+[connection signal="pressed" from="infra_panel/HBoxContainer/sc_button" to="infra_panel" method="_on_sc_button_pressed"]
+[connection signal="pressed" from="infra_panel/HBoxContainer/er_button" to="infra_panel" method="_on_er_button_pressed"]
+[connection signal="pressed" from="infra_panel/HBoxContainer/remover_button" to="infra_panel" method="_on_remover_button_pressed"]
+[connection signal="pressed" from="infra_panel/build" to="infra_panel" method="_on_build_pressed"]
+[connection signal="pressed" from="infra_panel/modify" to="infra_panel" method="_on_modify_pressed"]
+[connection signal="pressed" from="report_and_quit_panel/HBoxContainer/report_button" to="." method="_on_report_button_pressed"]
+[connection signal="pressed" from="report_and_quit_panel/HBoxContainer/door_button" to="save_and_quit" method="_on_door_button_pressed"]
+[connection signal="pressed" from="report_and_quit_panel/HBoxContainer/quit_game" to="save_and_quit" method="_on_quit_game_pressed"]
+[connection signal="visibility_changed" from="infra_amount_panel" to="infra_amount_panel" method="_on_infra_amount_panel_visibility_changed"]
+[connection signal="pressed" from="infra_amount_panel/HBoxContainer/1_button" to="infra_amount_panel" method="_on_1_button_pressed"]
+[connection signal="pressed" from="infra_amount_panel/HBoxContainer/10_button" to="infra_amount_panel" method="_on_10_button_pressed"]
+[connection signal="pressed" from="infra_amount_panel/HBoxContainer/100_button" to="infra_amount_panel" method="_on_100_button_pressed"]
+[connection signal="new_season" from="season_dial" to="." method="_on_season_dial_new_season"]
+[connection signal="new_year" from="season_dial" to="." method="_on_season_dial_new_year"]
+[connection signal="pressed" from="info" to="info" method="_on_info_pressed"]
+[connection signal="pressed" from="old_report/ok_button" to="." method="_on_ok_button_pressed"]
+[connection signal="pressed" from="budget_warning/Panel/next_dialogue" to="budget_warning" method="_on_next_dialogue_pressed"]
+[connection signal="animation_finished" from="report/report_points/AnimationPlayer" to="report" method="_on_AnimationPlayer_animation_finished"]
+[connection signal="pressed" from="report/report_points/ScrollContainer/VBoxContainer/ok_button/points_report_ok_button" to="." method="_on_points_report_ok_button_pressed"]
+[connection signal="value_changed" from="report/scroll_bar" to="report" method="_on_scroll_bar_value_changed"]
+[connection signal="pressed" from="next_turn" to="." method="_on_next_turn_pressed"]
+[connection signal="dialogue_ended" from="intro_dialogue_box" to="Onboarding" method="_on_intro_dialogue_box_dialogue_ended"]
+[connection signal="pressed" from="intro_dialogue_box/Panel/next_dialogue" to="intro_dialogue_box" method="_on_next_dialogue_pressed"]
+[connection signal="dialogue_ended" from="outro_dialogue_box" to="Onboarding" method="_on_intro_dialogue_box_dialogue_ended"]
+[connection signal="pressed" from="outro_dialogue_box/Panel/next_dialogue" to="outro_dialogue_box" method="_on_next_dialogue_pressed"]
+[connection signal="dialogue_ended" from="info_button_dialogue_box" to="Onboarding" method="_on_info_button_dialogue_box_dialogue_ended"]
+[connection signal="pressed" from="info_button_dialogue_box/Panel/next_dialogue" to="info_button_dialogue_box" method="_on_next_dialogue_pressed"]
+[connection signal="dialogue_ended" from="simple_tool_dialogue" to="Onboarding" method="_on_info_button_dialogue_box_dialogue_ended"]
+[connection signal="pressed" from="simple_tool_dialogue/Panel/next_dialogue" to="simple_tool_dialogue" method="_on_next_dialogue_pressed"]
+[connection signal="pressed" from="tool_dialogue_box/Panel/next_dialogue" to="Onboarding" method="_on_next_dialogue_pressed"]
+[connection signal="pressed" from="tool_dialogue_box/Panel/next_dialogue" to="tool_dialogue_box" method="_on_next_dialogue_pressed"]
+[connection signal="pressed" from="tool_dialogue_box/sc_button" to="Onboarding" method="_on_sc_button_pressed"]
+[connection signal="pop_up_closed" from="CanvasLayer/info_pop_up_window" to="info" method="_on_info_pop_up_window_pop_up_closed"]
+[connection signal="pop_up_closed" from="CanvasLayer/info_pop_up_window" to="Onboarding" method="_on_info_pop_up_window_pop_up_closed"]
+[connection signal="pop_up_opened" from="CanvasLayer/info_pop_up_window" to="info" method="_on_info_pop_up_window_pop_up_opened"]
+[connection signal="pressed" from="CanvasLayer/exit_level_dialogue/dialogue_box/Panel/next_dialogue" to="save_and_quit" method="_on_next_dialogue_pressed"]
+[connection signal="pressed" from="CanvasLayer/exit_level_dialogue/dialogue_box/Panel/next_dialogue" to="CanvasLayer/exit_level_dialogue/dialogue_box" method="_on_next_dialogue_pressed"]
+[connection signal="pressed" from="CanvasLayer/exit_level_dialogue/dialogue_box/Panel/yes" to="save_and_quit" method="_on_yes_pressed"]
+[connection signal="pressed" from="CanvasLayer/exit_level_dialogue/dialogue_box/Panel/no" to="save_and_quit" method="_on_no_pressed"]
+[connection signal="pressed" from="CanvasLayer/exit_level_dialogue/dialogue_box/naming/apply_name" to="CanvasLayer/exit_level_dialogue" method="_on_apply_name_pressed"]
+
+[editable path="CanvasLayer/info_pop_up_window"]

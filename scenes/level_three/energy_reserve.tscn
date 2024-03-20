@@ -1,0 +1,158 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://scripts/level_three/infra_item.gd" type="Script" id=1]
+[ext_resource path="res://art/energy_reserve.png" type="Texture" id=2]
+[ext_resource path="res://art/stopwatch.png" type="Texture" id=3]
+[ext_resource path="res://ui/text_body.tres" type="Theme" id=4]
+[ext_resource path="res://ui/build_ui.tres" type="Theme" id=5]
+[ext_resource path="res://scripts/level_three/stopwatch.gd" type="Script" id=6]
+[ext_resource path="res://scripts/level_three/sprite_click.gd" type="Script" id=7]
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "size_pump"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=1]
+resource_name = "size_pump"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.25, 1.25 ), Vector2( 1, 1 ) ]
+}
+
+[node name="energy_reserve" type="Node2D" groups=["energy_reserve"]]
+script = ExtResource( 1 )
+price = 83000
+timer_multiplier = 20
+type = "energy_reserve"
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, 32 )
+texture = ExtResource( 2 )
+centered = false
+offset = Vector2( -32, -64 )
+script = ExtResource( 7 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="size_slider" type="HSlider" parent="CanvasLayer"]
+visible = false
+margin_left = -66.0
+margin_top = 30.0
+margin_right = 67.0
+margin_bottom = 46.0
+theme = ExtResource( 5 )
+min_value = 1.0
+max_value = 50.0
+value = 1.0
+
+[node name="size_text" type="RichTextLabel" parent="CanvasLayer/size_slider"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 16.0
+margin_bottom = 32.0
+bbcode_enabled = true
+bbcode_text = "[center]1 MWh[/center]"
+text = "1 MWh"
+
+[node name="price_text" type="RichTextLabel" parent="CanvasLayer/size_slider"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -34.0
+margin_top = 40.0
+margin_right = 33.0
+margin_bottom = 56.0
+rect_pivot_offset = Vector2( 66, 16 )
+bbcode_enabled = true
+bbcode_text = "[center]-???€[/center]"
+text = "-???€"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/size_slider/price_text"]
+anims/RESET = SubResource( 2 )
+anims/size_pump = SubResource( 3 )
+
+[node name="build_button" type="Button" parent="CanvasLayer/size_slider"]
+visible = false
+margin_left = 12.0
+margin_top = 48.0
+margin_right = 119.0
+margin_bottom = 82.0
+theme = ExtResource( 5 )
+text = "RAKENNA"
+
+[node name="stopwatch" type="Control" parent="CanvasLayer"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+theme = ExtResource( 5 )
+script = ExtResource( 6 )
+
+[node name="stopwatch" type="Sprite" parent="CanvasLayer/stopwatch"]
+position = Vector2( -32, 37 )
+texture = ExtResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/stopwatch"]
+root_node = NodePath("../stopwatch")
+anims/size_pump = SubResource( 1 )
+
+[node name="timer_text" type="RichTextLabel" parent="CanvasLayer/stopwatch"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 23.0
+margin_right = 68.0
+margin_bottom = 55.0
+theme = ExtResource( 4 )
+bbcode_enabled = true
+bbcode_text = "60 s"
+text = "60 s"
+
+[node name="Timer" type="Timer" parent="CanvasLayer/stopwatch"]
+wait_time = 5.0
+one_shot = true
+
+[node name="kill_timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="click" from="Sprite" to="." method="_on_Sprite_click"]
+[connection signal="drag_ended" from="CanvasLayer/size_slider" to="." method="_on_size_slider_drag_ended"]
+[connection signal="value_changed" from="CanvasLayer/size_slider" to="." method="_on_size_slider_value_changed"]
+[connection signal="pressed" from="CanvasLayer/size_slider/build_button" to="." method="_on_build_button_pressed"]
+[connection signal="build_finished" from="CanvasLayer/stopwatch" to="." method="_on_stopwatch_build_finished"]
+[connection signal="timeout" from="CanvasLayer/stopwatch/Timer" to="CanvasLayer/stopwatch" method="_on_Timer_timeout"]
+[connection signal="timeout" from="kill_timer" to="." method="_on_kill_timer_timeout"]

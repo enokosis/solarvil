@@ -1,0 +1,170 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://ui/basic_theme.tres" type="Theme" id=1]
+[ext_resource path="res://art/sun.png" type="Texture" id=2]
+[ext_resource path="res://ui/headers.tres" type="Theme" id=3]
+[ext_resource path="res://ui/build_ui.tres" type="Theme" id=4]
+[ext_resource path="res://scripts/lobby.gd" type="Script" id=5]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "sun_rotation"
+length = 10.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5, 10 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -180.0, -360.0 ]
+}
+
+[node name="lobby" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 5 )
+
+[node name="bg" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="sun_animation" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -500.0
+margin_top = -500.0
+margin_right = 500.0
+margin_bottom = 500.0
+rect_pivot_offset = Vector2( 500, 500 )
+
+[node name="sun" type="TextureRect" parent="sun_animation"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -32.0
+margin_right = 64.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 32, 32 )
+texture = ExtResource( 2 )
+
+[node name="sun3" type="TextureRect" parent="sun_animation"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -64.0
+margin_top = -32.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 32, 32 )
+texture = ExtResource( 2 )
+
+[node name="sun2" type="TextureRect" parent="sun_animation"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -32.0
+margin_right = 32.0
+margin_bottom = 64.0
+rect_pivot_offset = Vector2( 32, 32 )
+texture = ExtResource( 2 )
+
+[node name="sun4" type="TextureRect" parent="sun_animation"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -32.0
+margin_top = -64.0
+margin_right = 32.0
+rect_pivot_offset = Vector2( 32, 32 )
+texture = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="sun_animation"]
+autoplay = "sun_rotation"
+playback_speed = 0.25
+anims/RESET = SubResource( 1 )
+anims/sun_rotation = SubResource( 2 )
+
+[node name="large_sun" type="TextureRect" parent="sun_animation"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -32.0
+margin_top = -32.0
+margin_right = 32.0
+margin_bottom = 32.0
+rect_scale = Vector2( 12, 12 )
+rect_pivot_offset = Vector2( 32, 32 )
+texture = ExtResource( 2 )
+
+[node name="header" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="header" type="RichTextLabel" parent="header"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -224.5
+margin_top = 32.0
+margin_right = 224.5
+margin_bottom = 93.0
+theme = ExtResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[center]Sopivuustesti[/center]"
+text = "Sopivuustesti"
+
+[node name="message" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 4 )
+
+[node name="message" type="RichTextLabel" parent="message"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -150.0
+margin_top = -111.0
+margin_right = 150.0
+margin_bottom = -49.0
+bbcode_enabled = true
+bbcode_text = "[center]Kootkaa työryhmänne ja aloittakaa peli yhdessä.[/center]"
+text = "Kootkaa työryhmänne ja aloittakaa peli yhdessä."
+fit_content_height = true
+
+[node name="move_to_scene" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -100.0
+margin_top = -25.0
+margin_right = 100.0
+margin_bottom = 25.0
+theme = ExtResource( 4 )
+text = "siirry tasolle ?"
+
+[connection signal="pressed" from="move_to_scene" to="." method="_on_move_to_scene_pressed"]

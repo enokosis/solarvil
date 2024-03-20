@@ -1,0 +1,821 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://scripts/level_three/dialogue_box.gd" type="Script" id=1]
+[ext_resource path="res://ui/basic_theme.tres" type="Theme" id=2]
+[ext_resource path="res://ui/text_body.tres" type="Theme" id=3]
+[ext_resource path="res://art/boss_face.png" type="Texture" id=4]
+[ext_resource path="res://scripts/level_one/level_one.gd" type="Script" id=5]
+[ext_resource path="res://art/sun.png" type="Texture" id=6]
+[ext_resource path="res://scripts/level_one/outro_logic.gd" type="Script" id=7]
+[ext_resource path="res://art/door_icon.png" type="Texture" id=8]
+[ext_resource path="res://ui/headers.tres" type="Theme" id=9]
+
+[sub_resource type="Animation" id=6]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "sun_rotation"
+length = 10.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5, 10 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -180.0, -360.0 ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "size_pump"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "size_pump"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="Animation" id=2]
+resource_name = "button_size_pump"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "button_size_pump"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "size_pump"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=13]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "size_pump"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+
+[node name="level_one" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+
+[node name="background" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+
+[node name="header" type="Control" parent="background"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="header" type="RichTextLabel" parent="background/header"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -224.5
+margin_top = 32.0
+margin_right = 224.5
+margin_bottom = 93.0
+theme = ExtResource( 9 )
+bbcode_enabled = true
+bbcode_text = "[center]Sopivuustesti[/center]"
+text = "Sopivuustesti"
+
+[node name="sun_animation" type="Control" parent="background"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -500.0
+margin_top = -500.0
+margin_right = 500.0
+margin_bottom = 500.0
+rect_pivot_offset = Vector2( 500, 500 )
+
+[node name="sun" type="TextureRect" parent="background/sun_animation"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -32.0
+margin_right = 64.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 32, 32 )
+texture = ExtResource( 6 )
+
+[node name="sun3" type="TextureRect" parent="background/sun_animation"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -64.0
+margin_top = -32.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 32, 32 )
+texture = ExtResource( 6 )
+
+[node name="sun2" type="TextureRect" parent="background/sun_animation"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -32.0
+margin_right = 32.0
+margin_bottom = 64.0
+rect_pivot_offset = Vector2( 32, 32 )
+texture = ExtResource( 6 )
+
+[node name="sun4" type="TextureRect" parent="background/sun_animation"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -32.0
+margin_top = -64.0
+margin_right = 32.0
+rect_pivot_offset = Vector2( 32, 32 )
+texture = ExtResource( 6 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="background/sun_animation"]
+autoplay = "sun_rotation"
+playback_speed = 0.25
+anims/RESET = SubResource( 6 )
+anims/sun_rotation = SubResource( 7 )
+
+[node name="body" type="Control" parent="background"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 3 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="background/body"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -400.0
+margin_top = -300.0
+margin_right = 400.0
+margin_bottom = 300.0
+custom_constants/separation = 45
+
+[node name="question_0" type="RichTextLabel" parent="background/body/HBoxContainer"]
+margin_top = 269.0
+margin_right = 260.0
+margin_bottom = 331.0
+rect_min_size = Vector2( 260, 0 )
+rect_pivot_offset = Vector2( 130, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 4
+bbcode_enabled = true
+bbcode_text = "[center]Haluan työskennellä yksin.[/center]"
+text = "Haluan työskennellä yksin."
+fit_content_height = true
+
+[node name="likeness_slider" type="HSlider" parent="background/body/HBoxContainer"]
+margin_left = 305.0
+margin_top = 292.0
+margin_right = 495.0
+margin_bottom = 308.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.1
+value = 0.5
+
+[node name="question_1" type="RichTextLabel" parent="background/body/HBoxContainer"]
+margin_left = 540.0
+margin_top = 269.0
+margin_right = 800.0
+margin_bottom = 331.0
+rect_min_size = Vector2( 260, 0 )
+rect_pivot_offset = Vector2( 130, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 4
+bbcode_enabled = true
+bbcode_text = "[center]Olen ulospäinsuuntautunut.[/center]"
+text = "Olen ulospäinsuuntautunut."
+fit_content_height = true
+
+[node name="next_question" type="Button" parent="background/body"]
+margin_left = 457.0
+margin_top = 370.0
+margin_right = 561.0
+margin_bottom = 404.0
+rect_pivot_offset = Vector2( 52, 18 )
+theme = ExtResource( 2 )
+text = "seuraava"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="background/body/next_question"]
+anims/RESET = SubResource( 3 )
+anims/size_pump = SubResource( 4 )
+
+[node name="evaluation" type="Control" parent="background"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 3 )
+
+[node name="evaluating" type="RichTextLabel" parent="background/evaluation"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -64.0
+margin_bottom = -33.0
+bbcode_enabled = true
+bbcode_text = "[center]Arvioidaan tuloksia.[/center]"
+text = "Arvioidaan tuloksia."
+fit_content_height = true
+
+[node name="evaluating_loading" type="RichTextLabel" parent="background/evaluation"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -121.5
+margin_top = -31.0
+margin_right = 121.5
+margin_bottom = 31.0
+size_flags_horizontal = 4
+bbcode_enabled = true
+bbcode_text = "[center]. . .[/center]"
+visible_characters = 5
+text = ". . ."
+fit_content_height = true
+
+[node name="Timer" type="Timer" parent="background/evaluation"]
+wait_time = 0.25
+one_shot = true
+
+[node name="results" type="Control" parent="background"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 3 )
+
+[node name="results_header" type="RichTextLabel" parent="background/results"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -64.0
+margin_bottom = -33.0
+bbcode_enabled = true
+bbcode_text = "[center]Sinun roolisi on:[/center]"
+text = "Sinun roolisi on:"
+fit_content_height = true
+
+[node name="resulting_role" type="RichTextLabel" parent="background/results"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -121.5
+margin_top = -31.0
+margin_right = 121.5
+margin_bottom = 31.0
+size_flags_horizontal = 4
+bbcode_enabled = true
+bbcode_text = "[center][/center]"
+fit_content_height = true
+
+[node name="done" type="Button" parent="background/results"]
+margin_left = 446.637
+margin_top = 366.413
+margin_right = 550.637
+margin_bottom = 400.413
+rect_pivot_offset = Vector2( 52, 18 )
+theme = ExtResource( 2 )
+text = "seuraava"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="background/results/done"]
+autoplay = "size_pump"
+anims/RESET = SubResource( 8 )
+anims/size_pump = SubResource( 9 )
+
+[node name="intro_dialogue_box" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -299.5
+margin_right = 512.0
+margin_bottom = 299.5
+theme = ExtResource( 2 )
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 1 )
+
+[node name="background_color" type="ColorRect" parent="intro_dialogue_box"]
+modulate = Color( 0, 0, 0, 0.627451 )
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Panel" type="Panel" parent="intro_dialogue_box"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -345.0
+margin_top = -198.5
+margin_right = 346.0
+margin_bottom = -0.5
+
+[node name="TextureRect" type="TextureRect" parent="intro_dialogue_box/Panel"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -202.5
+margin_right = 128.0
+margin_bottom = -74.5
+rect_scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 4 )
+
+[node name="dialogue" type="Control" parent="intro_dialogue_box/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="0" type="RichTextLabel" parent="intro_dialogue_box/Panel/dialogue"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -494.0
+margin_top = -70.0
+margin_right = -8.0
+margin_bottom = 92.0
+theme = ExtResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[wave]Moikka![/wave]
+Tervetuloa Aurinkokyläpelin pariin.
+Minun nimeni on Hoyt ja olen apunasi pelaamisen ajan!
+"
+text = "Moikka!
+Tervetuloa Aurinkokyläpelin pariin.
+Minun nimeni on Hoyt ja olen apunasi pelaamisen ajan!
+"
+
+[node name="1" type="RichTextLabel" parent="intro_dialogue_box/Panel/dialogue"]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -494.0
+margin_top = -70.0
+margin_right = -8.0
+margin_bottom = 92.0
+theme = ExtResource( 3 )
+bbcode_enabled = true
+bbcode_text = "Ensimmäisenä tehtävänäsi on leikkimielinen testi, jonka avulla pohdit rooliasi työryhmän jäsenenä viidellä osa-alueella."
+text = "Ensimmäisenä tehtävänäsi on leikkimielinen testi, jonka avulla pohdit rooliasi työryhmän jäsenenä viidellä osa-alueella."
+
+[node name="5" type="RichTextLabel" parent="intro_dialogue_box/Panel/dialogue"]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -494.0
+margin_top = -70.0
+margin_right = -34.0
+margin_bottom = 92.0
+theme = ExtResource( 3 )
+bbcode_enabled = true
+bbcode_text = "Kullakin osa-alueella on kaksi vaihtoehtoista toimintamallia. Määrittele liukukytkimen avulla näiden kahden välillä, kumpi mielestäsi kuvaa omaa toimintaasi paremmin."
+text = "Kullakin osa-alueella on kaksi vaihtoehtoista toimintamallia. Määrittele liukukytkimen avulla näiden kahden välillä, kumpi mielestäsi kuvaa omaa toimintaasi paremmin."
+
+[node name="2" type="RichTextLabel" parent="intro_dialogue_box/Panel/dialogue"]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -494.0
+margin_top = -70.0
+margin_right = -39.0
+margin_bottom = 92.0
+theme = ExtResource( 3 )
+bbcode_enabled = true
+bbcode_text = "Nähdään kun olet valmis.
+Hauskoja pelihetkiä!"
+text = "Nähdään kun olet valmis.
+Hauskoja pelihetkiä!"
+
+[node name="next_dialogue" type="Button" parent="intro_dialogue_box/Panel"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 293.5
+margin_top = -24.5
+margin_right = 388.5
+margin_bottom = 18.5
+rect_pivot_offset = Vector2( 47, 21 )
+text = "jatka"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="intro_dialogue_box/Panel/next_dialogue"]
+autoplay = "button_size_pump"
+anims/button_size_pump = SubResource( 2 )
+
+[node name="outro_dialogue_box" type="Panel" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -299.5
+margin_right = 512.0
+margin_bottom = 299.5
+theme = ExtResource( 2 )
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 1 )
+
+[node name="background_color" type="ColorRect" parent="outro_dialogue_box"]
+modulate = Color( 0, 0, 0, 0.627451 )
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Panel" type="Panel" parent="outro_dialogue_box"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -345.0
+margin_top = -198.5
+margin_right = 346.0
+margin_bottom = -0.5
+
+[node name="TextureRect" type="TextureRect" parent="outro_dialogue_box/Panel"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -202.5
+margin_right = 128.0
+margin_bottom = -74.5
+rect_scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 4 )
+
+[node name="dialogue" type="Control" parent="outro_dialogue_box/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="0" type="RichTextLabel" parent="outro_dialogue_box/Panel/dialogue"]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -494.0
+margin_top = -70.0
+margin_right = -8.0
+margin_bottom = 92.0
+theme = ExtResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[wave]Testi suoritettu, onnittelut![/wave]"
+text = "Testi suoritettu, onnittelut!"
+
+[node name="1" type="RichTextLabel" parent="outro_dialogue_box/Panel/dialogue"]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -494.0
+margin_top = -70.0
+margin_right = -8.0
+margin_bottom = 92.0
+theme = ExtResource( 3 )
+bbcode_enabled = true
+bbcode_text = "En muuten tajunnut kysyä kuka olet. Kertoisitko sen minulle muodossa etunimi sukunimi opiskelijanumero?"
+text = "En muuten tajunnut kysyä kuka olet. Kertoisitko sen minulle muodossa etunimi sukunimi opiskelijanumero?"
+
+[node name="5" type="RichTextLabel" parent="outro_dialogue_box/Panel/dialogue"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -494.0
+margin_top = -70.0
+margin_right = -34.0
+margin_bottom = 92.0
+theme = ExtResource( 3 )
+bbcode_enabled = true
+bbcode_text = "Hauska tavata &nimi!
+Olet nyt valmis siirtymään eteenpäin."
+text = "Hauska tavata &nimi!
+Olet nyt valmis siirtymään eteenpäin."
+
+[node name="2" type="RichTextLabel" parent="outro_dialogue_box/Panel/dialogue"]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -494.0
+margin_top = -70.0
+margin_right = -39.0
+margin_bottom = 92.0
+theme = ExtResource( 3 )
+bbcode_enabled = true
+bbcode_text = "Seuraavassa tasossa työskennellään tiimeissä. Jos sinulla ei vielä ollut tiimiä, nyt on hyvä aika muodostaa sellainen."
+text = "Seuraavassa tasossa työskennellään tiimeissä. Jos sinulla ei vielä ollut tiimiä, nyt on hyvä aika muodostaa sellainen."
+
+[node name="3" type="RichTextLabel" parent="outro_dialogue_box/Panel/dialogue"]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -494.0
+margin_top = -70.0
+margin_right = -39.0
+margin_bottom = 92.0
+theme = ExtResource( 3 )
+bbcode_enabled = true
+bbcode_text = "Paina kuitenkin ensin tallennusnappia ja vien sinut sitten seuraavaan tasoon!"
+text = "Paina kuitenkin ensin tallennusnappia ja vien sinut sitten seuraavaan tasoon!"
+
+[node name="next_dialogue" type="Button" parent="outro_dialogue_box/Panel"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 293.5
+margin_top = -24.5
+margin_right = 388.5
+margin_bottom = 18.5
+rect_pivot_offset = Vector2( 47, 21 )
+text = "jatka"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="outro_dialogue_box/Panel/next_dialogue"]
+autoplay = "button_size_pump"
+anims/button_size_pump = SubResource( 5 )
+
+[node name="save_game" type="TextureButton" parent="outro_dialogue_box"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -32.0
+margin_top = 64.0
+margin_right = 32.0
+margin_bottom = 128.0
+rect_pivot_offset = Vector2( 32, 32 )
+texture_normal = ExtResource( 8 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="outro_dialogue_box/save_game"]
+autoplay = "size_pump"
+anims/RESET = SubResource( 10 )
+anims/size_pump = SubResource( 11 )
+
+[node name="naming" type="Control" parent="outro_dialogue_box"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+
+[node name="name_input" type="HBoxContainer" parent="outro_dialogue_box/naming"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -454.0
+margin_top = 55.5
+margin_right = 454.0
+margin_bottom = 99.5
+
+[node name="first_name" type="LineEdit" parent="outro_dialogue_box/naming/name_input"]
+margin_right = 300.0
+margin_bottom = 44.0
+rect_min_size = Vector2( 300, 0 )
+
+[node name="label" type="RichTextLabel" parent="outro_dialogue_box/naming/name_input/first_name"]
+margin_top = 48.0
+margin_right = 302.0
+margin_bottom = 71.0
+rect_min_size = Vector2( 300, 0 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+bbcode_enabled = true
+bbcode_text = "[center]etunimi[/center]"
+text = "etunimi"
+fit_content_height = true
+
+[node name="last_name" type="LineEdit" parent="outro_dialogue_box/naming/name_input"]
+margin_left = 304.0
+margin_right = 604.0
+margin_bottom = 44.0
+rect_min_size = Vector2( 300, 0 )
+
+[node name="label" type="RichTextLabel" parent="outro_dialogue_box/naming/name_input/last_name"]
+margin_top = 48.0
+margin_right = 302.0
+margin_bottom = 71.0
+rect_min_size = Vector2( 300, 0 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+bbcode_enabled = true
+bbcode_text = "[center]sukunimi[/center]"
+text = "sukunimi"
+fit_content_height = true
+
+[node name="student_number" type="LineEdit" parent="outro_dialogue_box/naming/name_input"]
+margin_left = 608.0
+margin_right = 908.0
+margin_bottom = 44.0
+rect_min_size = Vector2( 300, 0 )
+
+[node name="label" type="RichTextLabel" parent="outro_dialogue_box/naming/name_input/student_number"]
+margin_top = 48.0
+margin_right = 302.0
+margin_bottom = 71.0
+rect_min_size = Vector2( 300, 0 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+bbcode_enabled = true
+bbcode_text = "[center]opiskelijanumero[/center]"
+text = "opiskelijanumero"
+fit_content_height = true
+
+[node name="apply_name" type="Button" parent="outro_dialogue_box/naming"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -47.5
+margin_top = 178.5
+margin_right = 47.5
+margin_bottom = 221.5
+rect_pivot_offset = Vector2( 47, 21 )
+theme = ExtResource( 2 )
+text = "ok!"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="outro_dialogue_box/naming/apply_name"]
+anims/RESET = SubResource( 13 )
+anims/size_pump = SubResource( 12 )
+
+[node name="outro_logic" type="Node" parent="."]
+script = ExtResource( 7 )
+
+[connection signal="drag_ended" from="background/body/HBoxContainer/likeness_slider" to="." method="_on_likeness_slider_drag_ended"]
+[connection signal="value_changed" from="background/body/HBoxContainer/likeness_slider" to="." method="_on_likeness_slider_value_changed"]
+[connection signal="pressed" from="background/body/next_question" to="." method="_on_next_question_pressed"]
+[connection signal="timeout" from="background/evaluation/Timer" to="." method="_on_Timer_timeout"]
+[connection signal="pressed" from="background/results/done" to="." method="_on_done_pressed"]
+[connection signal="dialogue_ended" from="intro_dialogue_box" to="." method="_on_intro_dialogue_box_dialogue_ended"]
+[connection signal="pressed" from="intro_dialogue_box/Panel/next_dialogue" to="intro_dialogue_box" method="_on_next_dialogue_pressed"]
+[connection signal="pressed" from="outro_dialogue_box/Panel/next_dialogue" to="outro_dialogue_box" method="_on_next_dialogue_pressed"]
+[connection signal="pressed" from="outro_dialogue_box/Panel/next_dialogue" to="outro_logic" method="_on_next_dialogue_pressed"]
+[connection signal="pressed" from="outro_dialogue_box/save_game" to="outro_logic" method="_on_save_game_pressed"]
+[connection signal="pressed" from="outro_dialogue_box/naming/apply_name" to="outro_logic" method="_on_apply_name_pressed"]

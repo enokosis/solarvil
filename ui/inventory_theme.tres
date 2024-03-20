@@ -1,0 +1,50 @@
+[gd_resource type="Theme" load_steps=10 format=2]
+
+[ext_resource path="res://ui/Karla-VariableFont_wght.ttf" type="DynamicFontData" id=1]
+
+[sub_resource type="DynamicFont" id=1]
+size = 15
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.172549, 0.192157, 0.215686, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.960784, 0.0705882, 0.247059, 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0, 0.572549, 0.298039, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.172549, 0.192157, 0.215686, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0.572549, 0.298039, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.172549, 0.192157, 0.215686, 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0, 0.572549, 0.298039, 1 )
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[resource]
+default_font = SubResource( 1 )
+Button/fonts/font = SubResource( 1 )
+Button/styles/disabled = SubResource( 8 )
+Button/styles/focus = SubResource( 6 )
+Button/styles/hover = SubResource( 6 )
+Button/styles/normal = SubResource( 3 )
+Button/styles/pressed = SubResource( 5 )
+CheckBox/styles/pressed = SubResource( 7 )
+Label/fonts/font = SubResource( 1 )
+Panel/styles/panel = SubResource( 9 )
+PanelContainer/styles/panel = SubResource( 10 )

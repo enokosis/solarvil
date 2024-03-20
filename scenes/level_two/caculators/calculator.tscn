@@ -1,0 +1,91 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://ui/basic_theme.tres" type="Theme" id=1]
+[ext_resource path="res://scripts/level_two/calculator.gd" type="Script" id=2]
+[ext_resource path="res://art/stage 2/calculator_2.png" type="Texture" id=3]
+[ext_resource path="res://ui/build_ui.tres" type="Theme" id=4]
+
+[node name="Calculator" type="Node2D"]
+script = ExtResource( 2 )
+color = Color( 0.545098, 0.67451, 0.0588235, 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+visible = false
+position = Vector2( 172, 170.5 )
+scale = Vector2( 1.5625, 1.29167 )
+texture = ExtResource( 3 )
+
+[node name="TypeLabel" type="Label" parent="."]
+margin_left = 3.0
+margin_top = 7.0
+margin_right = 165.0
+margin_bottom = 29.0
+theme = ExtResource( 4 )
+text = "Laskin"
+
+[node name="calculator_texture" type="TextureRect" parent="."]
+margin_top = 40.0
+margin_right = 422.0
+margin_bottom = 285.0
+texture = ExtResource( 3 )
+stretch_mode = 1
+
+[node name="CooldownTimer" type="Timer" parent="."]
+
+[node name="VBoxMain" type="VBoxContainer" parent="."]
+margin_left = 30.0
+margin_top = 75.0
+margin_right = 111.0
+margin_bottom = 267.0
+theme = ExtResource( 1 )
+
+[node name="HBoxChoice" type="HBoxContainer" parent="VBoxMain"]
+margin_right = 117.0
+margin_bottom = 26.0
+
+[node name="CalculationDropdown" type="OptionButton" parent="VBoxMain/HBoxChoice"]
+margin_right = 18.0
+margin_bottom = 26.0
+
+[node name="HelpButton" type="Button" parent="VBoxMain/HBoxChoice"]
+margin_left = 22.0
+margin_right = 35.0
+margin_bottom = 26.0
+text = "?"
+
+[node name="Inputs" type="VBoxContainer" parent="VBoxMain"]
+margin_top = 30.0
+margin_right = 117.0
+margin_bottom = 30.0
+
+[node name="CalculateButton" type="Button" parent="VBoxMain"]
+margin_top = 34.0
+margin_right = 117.0
+margin_bottom = 60.0
+text = "Laske"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxMain"]
+margin_top = 64.0
+margin_right = 117.0
+margin_bottom = 86.0
+
+[node name="UsageCounter" type="Label" parent="VBoxMain/HBoxContainer"]
+margin_right = 10.0
+margin_bottom = 22.0
+text = "9"
+
+[node name="CooldownLabel" type="Label" parent="VBoxMain/HBoxContainer"]
+margin_left = 14.0
+margin_right = 117.0
+margin_bottom = 22.0
+text = "Käyttökerrat"
+
+[node name="ExplanationPanel" type="Panel" parent="VBoxMain"]
+margin_top = 90.0
+margin_right = 117.0
+margin_bottom = 90.0
+
+[node name="ExplanationLabel" type="RichTextLabel" parent="VBoxMain/ExplanationPanel"]
+margin_right = 260.0
+margin_bottom = 120.0
+bbcode_enabled = true

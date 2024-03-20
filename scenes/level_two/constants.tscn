@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/level_two/constants.gd" type="Script" id=1]
+[ext_resource path="res://art/stage 2/const_report.png" type="Texture" id=2]
+[ext_resource path="res://ui/basic_theme.tres" type="Theme" id=3]
+[ext_resource path="res://ui/build_ui.tres" type="Theme" id=4]
+
+[node name="const_list" type="Sprite"]
+position = Vector2( 45.25, 29.75 )
+texture = ExtResource( 2 )
+script = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = -129.851
+margin_top = -50.9433
+margin_right = 130.149
+margin_bottom = 46.0567
+theme = ExtResource( 3 )
+text = "PV/T-pinta-ala, m2: 1000
+PV-hyötysuhde: 0.15
+Lämpöpumpun COP: 5
+Akuston energiahyötysuhde: 0.9"
+
+[node name="TypeLabel" type="Label" parent="."]
+margin_left = -130.25
+margin_top = -94.75
+margin_right = 45.75
+margin_bottom = -64.75
+theme = ExtResource( 4 )
+text = "Vakiomuuttujat"

@@ -1,0 +1,1052 @@
+[gd_scene load_steps=41 format=2]
+
+[ext_resource path="res://art/stage 2/table.png" type="Texture" id=1]
+[ext_resource path="res://scenes/level_two/sensors/sensor_sahko.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/level_two/desk.gd" type="Script" id=3]
+[ext_resource path="res://scenes/level_two/answerMachine.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/level_two/constants.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/level_two/caculators/calculator.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/level_two/data_manager.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/level_two/sensors/sensor_lammitus.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/level_two/sensors/sensor_lampotila.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/level_two/sensors/sensor_sateilu.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/level_two/printer.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/level_two/countdown_timer.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scripts/level_two/DEBUG_level_two_next_level_button.gd" type="Script" id=13]
+[ext_resource path="res://ui/basic_theme.tres" type="Theme" id=14]
+[ext_resource path="res://scenes/level_two/constPaper.tscn" type="PackedScene" id=15]
+[ext_resource path="res://scripts/level_three/dialogue_box.gd" type="Script" id=16]
+[ext_resource path="res://scripts/level_two/level_two_intro.gd" type="Script" id=17]
+[ext_resource path="res://art/boss_face.png" type="Texture" id=18]
+[ext_resource path="res://scripts/level_two/level_two_outro_logic.gd" type="Script" id=19]
+[ext_resource path="res://ui/build_ui.tres" type="Theme" id=20]
+[ext_resource path="res://ui/text_body.tres" type="Theme" id=21]
+[ext_resource path="res://ui/headers.tres" type="Theme" id=22]
+[ext_resource path="res://art/door_icon.png" type="Texture" id=23]
+[ext_resource path="res://scripts/level_two/level_two_exit_level.gd" type="Script" id=24]
+[ext_resource path="res://art/exit.png" type="Texture" id=25]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="Animation" id=2]
+resource_name = "button_size_pump"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "size_pump"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "size_pump"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "button_size_pump"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "button_size_pump"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "button_size_pump"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "size_pump"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "size_pump"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="StyleBoxEmpty" id=14]
+
+[sub_resource type="Animation" id=15]
+resource_name = "button_size_pump"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+
+[node name="Desk" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 14 )
+script = ExtResource( 3 )
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 14 )
+theme_type_variation = "BluePanel"
+
+[node name="DeskTexture" type="Sprite" parent="."]
+visible = false
+position = Vector2( 513, 300.109 )
+scale = Vector2( 0.538018, 0.509586 )
+texture = ExtResource( 1 )
+
+[node name="data_manager" parent="." instance=ExtResource( 7 )]
+position = Vector2( 19, 26 )
+
+[node name="answer_machine" parent="." instance=ExtResource( 4 )]
+position = Vector2( 413, 142 )
+
+[node name="const_list" parent="." instance=ExtResource( 5 )]
+visible = false
+position = Vector2( 736, 453 )
+
+[node name="Calculator" parent="." instance=ExtResource( 6 )]
+position = Vector2( 580, 17 )
+
+[node name="Sensor_sahko" parent="." instance=ExtResource( 2 )]
+margin_left = 100.0
+margin_top = 166.0
+margin_right = 165.0
+margin_bottom = 264.0
+color = Color( 0.0588235, 0.384314, 0.67451, 1 )
+
+[node name="Sensor_lammitys" parent="." instance=ExtResource( 8 )]
+margin_left = 101.0
+margin_top = 18.0
+margin_right = 166.0
+margin_bottom = 116.0
+color = Color( 0.67451, 0.643137, 0.0588235, 1 )
+
+[node name="Sensor_sateilu" parent="." instance=ExtResource( 10 )]
+margin_left = 104.0
+margin_top = 299.0
+margin_right = 169.0
+margin_bottom = 397.0
+color = Color( 0.0588235, 0.67451, 0.447059, 1 )
+
+[node name="Sensor_lampotila" parent="." instance=ExtResource( 9 )]
+margin_left = 105.0
+margin_top = 435.0
+margin_right = 170.0
+margin_bottom = 533.0
+color = Color( 0.67451, 0.188235, 0.0588235, 1 )
+
+[node name="countdown_timer" parent="." instance=ExtResource( 12 )]
+position = Vector2( 0, 1 )
+
+[node name="next_level" type="Button" parent="."]
+visible = false
+margin_left = 884.0
+margin_top = 23.0
+margin_right = 1003.0
+margin_bottom = 49.0
+text = "seuraava taso"
+script = ExtResource( 13 )
+
+[node name="printer" parent="." instance=ExtResource( 11 )]
+position = Vector2( 359, 476 )
+scale = Vector2( 1.2, 1.2 )
+
+[node name="constPaper" parent="." instance=ExtResource( 15 )]
+position = Vector2( 464, 476 )
+
+[node name="outro_logic" type="Node" parent="."]
+script = ExtResource( 19 )
+
+[node name="exit_level" type="TextureButton" parent="."]
+margin_left = 20.0
+margin_top = 516.0
+margin_right = 84.0
+margin_bottom = 580.0
+texture_normal = ExtResource( 25 )
+script = ExtResource( 24 )
+
+[node name="level_two_outro" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -6.10352e-05
+
+[node name="bg" type="Panel" parent="level_two_outro"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 14 )
+
+[node name="role_selection" type="Panel" parent="level_two_outro"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 14 )
+
+[node name="header" type="Control" parent="level_two_outro/role_selection"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="header" type="RichTextLabel" parent="level_two_outro/role_selection/header"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -224.5
+margin_top = 32.0
+margin_right = 224.5
+margin_bottom = 93.0
+theme = ExtResource( 22 )
+bbcode_enabled = true
+bbcode_text = "[center]Valitse rooli[/center]"
+text = "Valitse rooli"
+
+[node name="game_master_panel" type="Panel" parent="level_two_outro/role_selection"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 64.0
+margin_top = -182.5
+margin_right = 429.0
+margin_bottom = 182.5
+
+[node name="game_master" type="Button" parent="level_two_outro/role_selection/game_master_panel"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -141.0
+margin_top = -66.0
+margin_right = 141.0
+margin_bottom = -32.0
+theme = ExtResource( 20 )
+text = "Pelinjohtaja"
+
+[node name="role_description" type="RichTextLabel" parent="level_two_outro/role_selection/game_master_panel"]
+margin_left = 34.0
+margin_top = 35.0
+margin_right = 332.0
+margin_bottom = 265.0
+theme = ExtResource( 21 )
+bbcode_text = "Pelinjohtajana käytät laskinta tehtävien ratkaisuun. Laskutoimituksiin tarvittavan datan saat muilta tiimisi jäseniltä."
+text = "Pelinjohtajana käytät laskinta tehtävien ratkaisuun. Laskutoimituksiin tarvittavan datan saat muilta tiimisi jäseniltä."
+
+[node name="role_panel" type="Panel" parent="level_two_outro/role_selection"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -419.0
+margin_top = -182.5
+margin_right = -54.0
+margin_bottom = 182.5
+
+[node name="role_description" type="RichTextLabel" parent="level_two_outro/role_selection/role_panel"]
+margin_left = 34.0
+margin_top = 35.0
+margin_right = 332.0
+margin_bottom = 265.0
+theme = ExtResource( 21 )
+bbcode_text = "Sinulla on käytössäsi sensori josta saatavaa dataa tarvitsette tehtävien ratkaisuun."
+text = "Sinulla on käytössäsi sensori josta saatavaa dataa tarvitsette tehtävien ratkaisuun."
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="player_role" type="Button" parent="level_two_outro/role_selection/role_panel"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -141.0
+margin_top = -58.0
+margin_right = 141.0
+margin_bottom = -24.0
+theme = ExtResource( 20 )
+text = "Pelaajan rooli tulee tähän"
+
+[node name="dialogue_box" type="Panel" parent="level_two_outro"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -299.5
+margin_right = 512.0
+margin_bottom = 299.5
+theme = ExtResource( 14 )
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 16 )
+
+[node name="background_color" type="ColorRect" parent="level_two_outro/dialogue_box"]
+modulate = Color( 0, 0, 0, 0.627451 )
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Panel" type="Panel" parent="level_two_outro/dialogue_box"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -345.0
+margin_top = -198.5
+margin_right = 346.0
+margin_bottom = -0.5
+
+[node name="TextureRect" type="TextureRect" parent="level_two_outro/dialogue_box/Panel"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -202.5
+margin_right = 128.0
+margin_bottom = -74.5
+rect_scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 18 )
+
+[node name="dialogue" type="Control" parent="level_two_outro/dialogue_box/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="0" type="RichTextLabel" parent="level_two_outro/dialogue_box/Panel/dialogue"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -494.0
+margin_top = -70.0
+margin_right = -8.0
+margin_bottom = 92.0
+theme = ExtResource( 21 )
+bbcode_enabled = true
+bbcode_text = "[wave]Hyvää työtä![/wave]
+Olette selvittäneet kaikki tämän tason tehtävät. Tämä viesti näkyy vain pelinjohtajalle, luethan sen muillekin!"
+text = "Hyvää työtä!
+Olette selvittäneet kaikki tämän tason tehtävät. Tämä viesti näkyy vain pelinjohtajalle, luethan sen muillekin!"
+
+[node name="1" type="RichTextLabel" parent="level_two_outro/dialogue_box/Panel/dialogue"]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -494.0
+margin_top = -70.0
+margin_right = -8.0
+margin_bottom = 92.0
+theme = ExtResource( 21 )
+bbcode_enabled = true
+bbcode_text = "Seuraavassa tasossa pelataankin taas yksin. Toivottavasti teillä oli hauskaa yhdessä!"
+text = "Seuraavassa tasossa pelataankin taas yksin. Toivottavasti teillä oli hauskaa yhdessä!"
+
+[node name="5" type="RichTextLabel" parent="level_two_outro/dialogue_box/Panel/dialogue"]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -494.0
+margin_top = -70.0
+margin_right = -8.0
+margin_bottom = 92.0
+theme = ExtResource( 21 )
+bbcode_enabled = true
+bbcode_text = "Seuraavaksi pyytäisin pelinjohtajaa tallentamaan työryhmänne tuloksen tällä tallennuspainikkeella."
+text = "Seuraavaksi pyytäisin pelinjohtajaa tallentamaan työryhmänne tuloksen tällä tallennuspainikkeella."
+
+[node name="2" type="RichTextLabel" parent="level_two_outro/dialogue_box/Panel/dialogue"]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -494.0
+margin_top = -70.0
+margin_right = -8.0
+margin_bottom = 92.0
+theme = ExtResource( 21 )
+bbcode_enabled = true
+bbcode_text = "[wave]Kiitos![/wave]
+Aika lopetella tämä taso. Muut pääsevät täältä pois alavasemmalta löytyvällä painikkeella."
+text = "Kiitos!
+Aika lopetella tämä taso. Muut pääsevät täältä pois alavasemmalta löytyvällä painikkeella."
+
+[node name="3" type="RichTextLabel" parent="level_two_outro/dialogue_box/Panel/dialogue"]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -494.0
+margin_top = -70.0
+margin_right = -8.0
+margin_bottom = 92.0
+theme = ExtResource( 21 )
+bbcode_enabled = true
+bbcode_text = "Nähdään seuraavalla ja samalla viimeisellä tasolla!"
+text = "Nähdään seuraavalla ja samalla viimeisellä tasolla!"
+
+[node name="next_dialogue" type="Button" parent="level_two_outro/dialogue_box/Panel"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 293.5
+margin_top = -24.5
+margin_right = 388.5
+margin_bottom = 18.5
+rect_pivot_offset = Vector2( 47, 21 )
+text = "jatka"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="level_two_outro/dialogue_box/Panel/next_dialogue"]
+autoplay = "button_size_pump"
+anims/button_size_pump = SubResource( 2 )
+
+[node name="naming" type="Control" parent="level_two_outro/dialogue_box"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+theme = ExtResource( 14 )
+
+[node name="enter_name" type="LineEdit" parent="level_two_outro/dialogue_box/naming"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 325.5
+margin_top = 326.5
+margin_right = 658.5
+margin_bottom = 424.5
+caret_blink = true
+caret_blink_speed = 0.5
+
+[node name="apply_name" type="Button" parent="level_two_outro/dialogue_box/naming"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 432.5
+margin_top = 425.0
+margin_right = 527.5
+margin_bottom = 468.0
+rect_pivot_offset = Vector2( 47, 21 )
+theme = ExtResource( 14 )
+text = "ok!"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="level_two_outro/dialogue_box/naming/apply_name"]
+anims/RESET = SubResource( 3 )
+anims/size_pump = SubResource( 4 )
+
+[node name="save_game" type="TextureButton" parent="level_two_outro"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -32.0
+margin_top = 64.0
+margin_right = 32.0
+margin_bottom = 128.0
+rect_pivot_offset = Vector2( 32, 32 )
+texture_normal = ExtResource( 23 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="level_two_outro/save_game"]
+autoplay = "size_pump"
+anims/RESET = SubResource( 5 )
+anims/size_pump = SubResource( 6 )
+
+[node name="exit_level_dialogue" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -6.10352e-05
+script = ExtResource( 17 )
+
+[node name="bg" type="Panel" parent="exit_level_dialogue"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 14 )
+
+[node name="role_selection" type="Panel" parent="exit_level_dialogue"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 14 )
+
+[node name="header" type="Control" parent="exit_level_dialogue/role_selection"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="header" type="RichTextLabel" parent="exit_level_dialogue/role_selection/header"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -224.5
+margin_top = 32.0
+margin_right = 224.5
+margin_bottom = 93.0
+theme = ExtResource( 22 )
+bbcode_enabled = true
+bbcode_text = "[center]Valitse rooli[/center]"
+text = "Valitse rooli"
+
+[node name="game_master_panel" type="Panel" parent="exit_level_dialogue/role_selection"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 64.0
+margin_top = -182.5
+margin_right = 429.0
+margin_bottom = 182.5
+
+[node name="game_master" type="Button" parent="exit_level_dialogue/role_selection/game_master_panel"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -141.0
+margin_top = -66.0
+margin_right = 141.0
+margin_bottom = -32.0
+theme = ExtResource( 20 )
+text = "Pelinjohtaja"
+
+[node name="role_description" type="RichTextLabel" parent="exit_level_dialogue/role_selection/game_master_panel"]
+margin_left = 34.0
+margin_top = 35.0
+margin_right = 332.0
+margin_bottom = 265.0
+theme = ExtResource( 21 )
+bbcode_text = "Pelinjohtajana käytät laskinta tehtävien ratkaisuun. Laskutoimituksiin tarvittavan datan saat muilta tiimisi jäseniltä."
+text = "Pelinjohtajana käytät laskinta tehtävien ratkaisuun. Laskutoimituksiin tarvittavan datan saat muilta tiimisi jäseniltä."
+
+[node name="role_panel" type="Panel" parent="exit_level_dialogue/role_selection"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -419.0
+margin_top = -182.5
+margin_right = -54.0
+margin_bottom = 182.5
+
+[node name="role_description" type="RichTextLabel" parent="exit_level_dialogue/role_selection/role_panel"]
+margin_left = 34.0
+margin_top = 35.0
+margin_right = 332.0
+margin_bottom = 265.0
+theme = ExtResource( 21 )
+bbcode_text = "Sinulla on käytössäsi sensori josta saatavaa dataa tarvitsette tehtävien ratkaisuun."
+text = "Sinulla on käytössäsi sensori josta saatavaa dataa tarvitsette tehtävien ratkaisuun."
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="player_role" type="Button" parent="exit_level_dialogue/role_selection/role_panel"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -141.0
+margin_top = -58.0
+margin_right = 141.0
+margin_bottom = -24.0
+theme = ExtResource( 20 )
+text = "Pelaajan rooli tulee tähän"
+
+[node name="dialogue_box" type="Panel" parent="exit_level_dialogue"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -299.5
+margin_right = 512.0
+margin_bottom = 299.5
+theme = ExtResource( 14 )
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 16 )
+
+[node name="background_color" type="ColorRect" parent="exit_level_dialogue/dialogue_box"]
+modulate = Color( 0, 0, 0, 0.627451 )
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Panel" type="Panel" parent="exit_level_dialogue/dialogue_box"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -345.0
+margin_top = -198.5
+margin_right = 346.0
+margin_bottom = -0.5
+
+[node name="TextureRect" type="TextureRect" parent="exit_level_dialogue/dialogue_box/Panel"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -202.5
+margin_right = 128.0
+margin_bottom = -74.5
+rect_scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 18 )
+
+[node name="dialogue" type="Control" parent="exit_level_dialogue/dialogue_box/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="0" type="RichTextLabel" parent="exit_level_dialogue/dialogue_box/Panel/dialogue"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -494.0
+margin_top = -70.0
+margin_right = -8.0
+margin_bottom = 92.0
+theme = ExtResource( 21 )
+bbcode_enabled = true
+bbcode_text = "Oletko valmis?
+\"Kyllä\" poistaa sinut tältä tasolta.
+\"Ei\" antaa sinun jatkaa pelaamista täällä."
+text = "Oletko valmis?
+\"Kyllä\" poistaa sinut tältä tasolta.
+\"Ei\" antaa sinun jatkaa pelaamista täällä."
+
+[node name="next_dialogue" type="Button" parent="exit_level_dialogue/dialogue_box/Panel"]
+visible = false
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 293.5
+margin_top = -24.5
+margin_right = 388.5
+margin_bottom = 18.5
+rect_pivot_offset = Vector2( 47, 21 )
+text = "jatka"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="exit_level_dialogue/dialogue_box/Panel/next_dialogue"]
+autoplay = "button_size_pump"
+anims/button_size_pump = SubResource( 7 )
+
+[node name="yes" type="Button" parent="exit_level_dialogue/dialogue_box/Panel"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 32.5
+margin_top = -27.0
+margin_right = 127.5
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 47, 21 )
+text = "kyllä"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="exit_level_dialogue/dialogue_box/Panel/yes"]
+autoplay = "button_size_pump"
+anims/button_size_pump = SubResource( 12 )
+
+[node name="no" type="Button" parent="exit_level_dialogue/dialogue_box/Panel"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -135.5
+margin_top = -27.0
+margin_right = -40.5
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 47, 21 )
+text = "ei"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="exit_level_dialogue/dialogue_box/Panel/no"]
+autoplay = "button_size_pump"
+anims/button_size_pump = SubResource( 13 )
+
+[node name="naming" type="Control" parent="exit_level_dialogue/dialogue_box"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+theme = ExtResource( 14 )
+
+[node name="enter_name" type="LineEdit" parent="exit_level_dialogue/dialogue_box/naming"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 325.5
+margin_top = 326.5
+margin_right = 658.5
+margin_bottom = 424.5
+caret_blink = true
+caret_blink_speed = 0.5
+
+[node name="apply_name" type="Button" parent="exit_level_dialogue/dialogue_box/naming"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 432.5
+margin_top = 425.0
+margin_right = 527.5
+margin_bottom = 468.0
+rect_pivot_offset = Vector2( 47, 21 )
+theme = ExtResource( 14 )
+text = "ok!"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="exit_level_dialogue/dialogue_box/naming/apply_name"]
+anims/RESET = SubResource( 8 )
+anims/size_pump = SubResource( 9 )
+
+[node name="save_game" type="TextureButton" parent="exit_level_dialogue"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -32.0
+margin_top = 64.0
+margin_right = 32.0
+margin_bottom = 128.0
+rect_pivot_offset = Vector2( 32, 32 )
+texture_normal = ExtResource( 23 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="exit_level_dialogue/save_game"]
+autoplay = "size_pump"
+anims/RESET = SubResource( 10 )
+anims/size_pump = SubResource( 11 )
+
+[node name="intro_dialogue_box" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -299.5
+margin_right = 512.0
+margin_bottom = 299.5
+theme = ExtResource( 14 )
+custom_styles/panel = SubResource( 14 )
+script = ExtResource( 16 )
+
+[node name="background_color" type="ColorRect" parent="intro_dialogue_box"]
+modulate = Color( 0, 0, 0, 0.627451 )
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1.0
+margin_top = 0.5
+margin_right = -1.0
+margin_bottom = 0.5
+
+[node name="Panel" type="Panel" parent="intro_dialogue_box"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -345.0
+margin_top = -198.5
+margin_right = 346.0
+margin_bottom = -0.5
+
+[node name="TextureRect" type="TextureRect" parent="intro_dialogue_box/Panel"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -202.5
+margin_right = 128.0
+margin_bottom = -74.5
+rect_scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 18 )
+
+[node name="dialogue" type="Control" parent="intro_dialogue_box/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="0" type="RichTextLabel" parent="intro_dialogue_box/Panel/dialogue"]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -494.0
+margin_top = -70.0
+margin_right = -8.0
+margin_bottom = 92.0
+theme = ExtResource( 21 )
+bbcode_enabled = true
+bbcode_text = "[wave]Vielä muutama pointti![/wave]"
+text = "Vielä muutama pointti!"
+
+[node name="1" type="RichTextLabel" parent="intro_dialogue_box/Panel/dialogue"]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -494.0
+margin_top = -70.0
+margin_right = -8.0
+margin_bottom = 92.0
+theme = ExtResource( 21 )
+bbcode_enabled = true
+bbcode_text = "Kaikille teistä on näkyvillä hieman eri asioita. Pelinjohtaja näkee laskimen ja muilla työryhmän jäsenillä on sensorinsa."
+text = "Kaikille teistä on näkyvillä hieman eri asioita. Pelinjohtaja näkee laskimen ja muilla työryhmän jäsenillä on sensorinsa."
+
+[node name="5" type="RichTextLabel" parent="intro_dialogue_box/Panel/dialogue"]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -494.0
+margin_top = -70.0
+margin_right = -34.0
+margin_bottom = 92.0
+theme = ExtResource( 21 )
+bbcode_enabled = true
+bbcode_text = "Keskellä oleva kysymyskone esittää kysymyksen ja kolme vaihtoehtoa joista teidän on valittava oikea. Vain pelinjohtaja näkee tämän."
+text = "Keskellä oleva kysymyskone esittää kysymyksen ja kolme vaihtoehtoa joista teidän on valittava oikea. Vain pelinjohtaja näkee tämän."
+
+[node name="2" type="RichTextLabel" parent="intro_dialogue_box/Panel/dialogue"]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -494.0
+margin_top = -70.0
+margin_right = -39.0
+margin_bottom = 92.0
+theme = ExtResource( 21 )
+bbcode_enabled = true
+bbcode_text = "Teitä pelaajia ei ole synkronoitu keskenään, joten joudutte itse pitämään huolen siitä että olette kaikki kartalla."
+text = "Teitä pelaajia ei ole synkronoitu keskenään, joten joudutte itse pitämään huolen siitä että olette kaikki kartalla."
+
+[node name="3" type="RichTextLabel" parent="intro_dialogue_box/Panel/dialogue"]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -494.0
+margin_top = -70.0
+margin_right = -19.0
+margin_bottom = 92.0
+theme = ExtResource( 21 )
+bbcode_enabled = true
+bbcode_text = "Kun olette suorittaneet kaikki tehtävät, minä tulen taas kertomaan siitä!"
+text = "Kun olette suorittaneet kaikki tehtävät, minä tulen taas kertomaan siitä!"
+
+[node name="7" type="RichTextLabel" parent="intro_dialogue_box/Panel/dialogue"]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -494.0
+margin_top = -70.0
+margin_right = -39.0
+margin_bottom = 92.0
+theme = ExtResource( 21 )
+bbcode_enabled = true
+bbcode_text = "Kun nyt suljette tämän ikkunan tehtävä ja ajanotto alkaa, olkaa siis valmiita!
+[wave]Mukavia pelihetkiä![/wave]"
+text = "Kun nyt suljette tämän ikkunan tehtävä ja ajanotto alkaa, olkaa siis valmiita!
+Mukavia pelihetkiä!"
+
+[node name="next_dialogue" type="Button" parent="intro_dialogue_box/Panel"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 293.5
+margin_top = -24.5
+margin_right = 388.5
+margin_bottom = 18.5
+rect_pivot_offset = Vector2( 47, 21 )
+text = "jatka"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="intro_dialogue_box/Panel/next_dialogue"]
+autoplay = "button_size_pump"
+anims/button_size_pump = SubResource( 15 )
+
+[connection signal="pressed" from="next_level" to="next_level" method="_on_next_level_pressed"]
+[connection signal="pressed" from="exit_level" to="exit_level" method="_on_exit_level_pressed"]
+[connection signal="pressed" from="level_two_outro/role_selection/game_master_panel/game_master" to="level_two_outro" method="_on_game_master_pressed"]
+[connection signal="pressed" from="level_two_outro/role_selection/role_panel/player_role" to="level_two_outro" method="_on_player_role_pressed"]
+[connection signal="dialogue_ended" from="level_two_outro/dialogue_box" to="outro_logic" method="_on_dialogue_box_dialogue_ended"]
+[connection signal="pressed" from="level_two_outro/dialogue_box/Panel/next_dialogue" to="outro_logic" method="_on_next_dialogue_pressed"]
+[connection signal="pressed" from="level_two_outro/dialogue_box/Panel/next_dialogue" to="level_two_outro/dialogue_box" method="_on_next_dialogue_pressed"]
+[connection signal="pressed" from="level_two_outro/dialogue_box/naming/apply_name" to="level_two_outro" method="_on_apply_name_pressed"]
+[connection signal="pressed" from="level_two_outro/save_game" to="outro_logic" method="_on_save_game_pressed"]
+[connection signal="pressed" from="exit_level_dialogue/role_selection/game_master_panel/game_master" to="exit_level_dialogue" method="_on_game_master_pressed"]
+[connection signal="pressed" from="exit_level_dialogue/role_selection/role_panel/player_role" to="exit_level_dialogue" method="_on_player_role_pressed"]
+[connection signal="dialogue_ended" from="exit_level_dialogue/dialogue_box" to="outro_logic" method="_on_dialogue_box_dialogue_ended"]
+[connection signal="pressed" from="exit_level_dialogue/dialogue_box/Panel/next_dialogue" to="outro_logic" method="_on_next_dialogue_pressed"]
+[connection signal="pressed" from="exit_level_dialogue/dialogue_box/Panel/next_dialogue" to="exit_level_dialogue/dialogue_box" method="_on_next_dialogue_pressed"]
+[connection signal="pressed" from="exit_level_dialogue/dialogue_box/Panel/yes" to="exit_level" method="_on_yes_pressed"]
+[connection signal="pressed" from="exit_level_dialogue/dialogue_box/Panel/no" to="exit_level" method="_on_no_pressed"]
+[connection signal="pressed" from="exit_level_dialogue/dialogue_box/naming/apply_name" to="exit_level_dialogue" method="_on_apply_name_pressed"]
+[connection signal="pressed" from="exit_level_dialogue/save_game" to="outro_logic" method="_on_save_game_pressed"]
+[connection signal="dialogue_ended" from="intro_dialogue_box" to="." method="_on_intro_dialogue_box_dialogue_ended"]
+[connection signal="pressed" from="intro_dialogue_box/Panel/next_dialogue" to="intro_dialogue_box" method="_on_next_dialogue_pressed"]

@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://ui/basic_theme.tres" type="Theme" id=1]
+[ext_resource path="res://scripts/pop_up_window.gd" type="Script" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[node name="pop_up_window" type="Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -299.5
+margin_right = 512.0
+margin_bottom = 299.5
+theme = ExtResource( 1 )
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Panel" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -425.0
+margin_top = -250.0
+margin_right = 425.0
+margin_bottom = 250.0
+
+[node name="pop_up_done" type="Button" parent="Panel"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -115.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = 63.0
+text = "selvä"
+
+[connection signal="button_down" from="Panel/pop_up_done" to="." method="_on_pop_up_done_button_down"]

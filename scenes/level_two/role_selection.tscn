@@ -1,0 +1,561 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://scripts/level_two/role_selection.gd" type="Script" id=1]
+[ext_resource path="res://ui/basic_theme.tres" type="Theme" id=2]
+[ext_resource path="res://scripts/level_two/level_two_intro.gd" type="Script" id=3]
+[ext_resource path="res://ui/build_ui.tres" type="Theme" id=4]
+[ext_resource path="res://scripts/level_three/dialogue_box.gd" type="Script" id=5]
+[ext_resource path="res://ui/text_body.tres" type="Theme" id=6]
+[ext_resource path="res://art/boss_face.png" type="Texture" id=7]
+[ext_resource path="res://ui/headers.tres" type="Theme" id=8]
+[ext_resource path="res://ui/role_selection_buttons.tres" type="ButtonGroup" id=9]
+[ext_resource path="res://art/question_mark.png" type="Texture" id=10]
+[ext_resource path="res://art/cricle.png" type="Texture" id=11]
+[ext_resource path="res://scripts/level_three/info.gd" type="Script" id=12]
+[ext_resource path="res://scenes/pop_up_window.tscn" type="PackedScene" id=13]
+
+[sub_resource type="Animation" id=9]
+resource_name = "pump_scale"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="Animation" id=6]
+resource_name = "button_size_pump"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "size_pump"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+
+[node name="RoleSelectionScene" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+
+[node name="WelcomeLabel" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -274.0
+margin_top = 56.0
+margin_right = 274.0
+margin_bottom = 119.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource( 4 )
+text = "Valitkaa työryhmänne ja jakautukaa rooleihin.
+Kun kaikki ovat valinneet roolinsa, aloittakaa peli!"
+
+[node name="holder" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -290.5
+margin_top = -150.0
+margin_right = 290.5
+margin_bottom = 150.0
+theme = ExtResource( 2 )
+
+[node name="SpinBox" type="SpinBox" parent="holder"]
+margin_right = 661.0
+margin_bottom = 26.0
+min_value = 1.0
+value = 1.0
+prefix = "Työryhmä"
+
+[node name="RoleButtons" type="HBoxContainer" parent="holder"]
+margin_top = 30.0
+margin_right = 661.0
+margin_bottom = 56.0
+
+[node name="GameMasterButton" type="CheckBox" parent="holder/RoleButtons"]
+margin_right = 124.0
+margin_bottom = 26.0
+focus_mode = 0
+enabled_focus_mode = 0
+group = ExtResource( 9 )
+text = "Pelinjohtaja"
+
+[node name="SolarEngineerButton" type="CheckBox" parent="holder/RoleButtons"]
+margin_left = 128.0
+margin_right = 289.0
+margin_bottom = 26.0
+focus_mode = 0
+enabled_focus_mode = 0
+group = ExtResource( 9 )
+text = "Energiakonsultti"
+
+[node name="ElectricianButton" type="CheckBox" parent="holder/RoleButtons"]
+margin_left = 293.0
+margin_right = 453.0
+margin_bottom = 26.0
+focus_mode = 0
+enabled_focus_mode = 0
+group = ExtResource( 9 )
+text = "LVI-suunnittelija"
+
+[node name="jantunen_button" type="CheckBox" parent="holder/RoleButtons"]
+margin_left = 457.0
+margin_right = 661.0
+margin_bottom = 26.0
+focus_mode = 0
+enabled_focus_mode = 0
+group = ExtResource( 9 )
+text = "Yleishenkilö Jantunen"
+
+[node name="KeyDisplayInputContainer" type="VBoxContainer" parent="holder"]
+margin_top = 60.0
+margin_right = 661.0
+margin_bottom = 82.0
+
+[node name="KeyDisplayLabel" type="Label" parent="holder/KeyDisplayInputContainer"]
+margin_right = 661.0
+margin_bottom = 22.0
+
+[node name="KeyInputField" type="LineEdit" parent="holder/KeyDisplayInputContainer"]
+visible = false
+margin_top = 26.0
+margin_right = 944.0
+margin_bottom = 52.0
+caret_blink = true
+caret_blink_speed = 0.5
+
+[node name="TeamSizeContainer" type="HBoxContainer" parent="holder"]
+visible = false
+margin_top = 86.0
+margin_right = 661.0
+margin_bottom = 112.0
+
+[node name="TeamSizeLabel" type="Label" parent="holder/TeamSizeContainer"]
+margin_top = 2.0
+margin_bottom = 24.0
+
+[node name="TeamSizeSpinBox" type="SpinBox" parent="holder/TeamSizeContainer"]
+margin_left = 4.0
+margin_right = 72.0
+margin_bottom = 26.0
+
+[node name="StartGameButton" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -75.0
+margin_top = 31.0
+margin_right = 75.0
+margin_bottom = 65.0
+theme = ExtResource( 4 )
+disabled = true
+text = "Aloita!"
+
+[node name="info" type="TextureButton" parent="."]
+margin_left = 942.0
+margin_top = 16.0
+margin_right = 1006.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 32, 32 )
+hint_tooltip = "Tutustu ohjeisiin"
+texture_normal = ExtResource( 10 )
+script = ExtResource( 12 )
+
+[node name="bg" type="TextureRect" parent="info"]
+show_behind_parent = true
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 11 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="info"]
+anims/pump_scale = SubResource( 9 )
+
+[node name="level_two_intro" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -6.10352e-05
+script = ExtResource( 3 )
+
+[node name="bg" type="Panel" parent="level_two_intro"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+
+[node name="role_selection" type="Panel" parent="level_two_intro"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+
+[node name="header" type="Control" parent="level_two_intro/role_selection"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="header" type="RichTextLabel" parent="level_two_intro/role_selection/header"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -224.5
+margin_top = 32.0
+margin_right = 224.5
+margin_bottom = 93.0
+theme = ExtResource( 8 )
+bbcode_enabled = true
+bbcode_text = "[center]Valitse rooli[/center]"
+text = "Valitse rooli"
+
+[node name="game_master_panel" type="Panel" parent="level_two_intro/role_selection"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 64.0
+margin_top = -182.5
+margin_right = 429.0
+margin_bottom = 182.5
+
+[node name="game_master" type="Button" parent="level_two_intro/role_selection/game_master_panel"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -141.0
+margin_top = -66.0
+margin_right = 141.0
+margin_bottom = -32.0
+theme = ExtResource( 4 )
+text = "Pelinjohtaja"
+
+[node name="role_description" type="RichTextLabel" parent="level_two_intro/role_selection/game_master_panel"]
+margin_left = 34.0
+margin_top = 35.0
+margin_right = 332.0
+margin_bottom = 265.0
+theme = ExtResource( 6 )
+bbcode_text = "Pelinjohtajana käytät laskinta tehtävien ratkaisuun. Laskutoimituksiin tarvittavan datan saat muilta tiimisi jäseniltä."
+text = "Pelinjohtajana käytät laskinta tehtävien ratkaisuun. Laskutoimituksiin tarvittavan datan saat muilta tiimisi jäseniltä."
+
+[node name="role_panel" type="Panel" parent="level_two_intro/role_selection"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -419.0
+margin_top = -182.5
+margin_right = -54.0
+margin_bottom = 182.5
+
+[node name="role_description" type="RichTextLabel" parent="level_two_intro/role_selection/role_panel"]
+margin_left = 34.0
+margin_top = 35.0
+margin_right = 332.0
+margin_bottom = 265.0
+theme = ExtResource( 6 )
+bbcode_text = "Sinulla on käytössäsi sensori josta saatavaa dataa tarvitsette tehtävien ratkaisuun."
+text = "Sinulla on käytössäsi sensori josta saatavaa dataa tarvitsette tehtävien ratkaisuun."
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="player_role" type="Button" parent="level_two_intro/role_selection/role_panel"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -141.0
+margin_top = -58.0
+margin_right = 141.0
+margin_bottom = -24.0
+theme = ExtResource( 4 )
+text = "Pelaajan rooli tulee tähän"
+
+[node name="dialogue_box" type="Panel" parent="level_two_intro"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -299.5
+margin_right = 512.0
+margin_bottom = 299.5
+theme = ExtResource( 2 )
+custom_styles/panel = SubResource( 5 )
+script = ExtResource( 5 )
+
+[node name="background_color" type="ColorRect" parent="level_two_intro/dialogue_box"]
+modulate = Color( 0, 0, 0, 0.627451 )
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Panel" type="Panel" parent="level_two_intro/dialogue_box"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -345.0
+margin_top = -198.5
+margin_right = 346.0
+margin_bottom = -0.5
+
+[node name="TextureRect" type="TextureRect" parent="level_two_intro/dialogue_box/Panel"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -202.5
+margin_right = 128.0
+margin_bottom = -74.5
+rect_scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 7 )
+
+[node name="dialogue" type="Control" parent="level_two_intro/dialogue_box/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="0" type="RichTextLabel" parent="level_two_intro/dialogue_box/Panel/dialogue"]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -494.0
+margin_top = -70.0
+margin_right = -8.0
+margin_bottom = 92.0
+theme = ExtResource( 6 )
+bbcode_enabled = true
+bbcode_text = "[wave]Hei kaikki![/wave]
+Olette tähän mennessä jo muodostaneet itsellenne tiimit ja nyt on aika pelata yhdessä."
+text = "Hei kaikki!
+Olette tähän mennessä jo muodostaneet itsellenne tiimit ja nyt on aika pelata yhdessä."
+
+[node name="5" type="RichTextLabel" parent="level_two_intro/dialogue_box/Panel/dialogue"]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -494.0
+margin_top = -70.0
+margin_right = -8.0
+margin_bottom = 92.0
+theme = ExtResource( 6 )
+bbcode_enabled = true
+bbcode_text = "Siirrytte seuraavaksi ikkunaan jossa valitsette työryhmänne ja jakaudutte rooleihin."
+text = "Siirrytte seuraavaksi ikkunaan jossa valitsette työryhmänne ja jakaudutte rooleihin."
+
+[node name="1" type="RichTextLabel" parent="level_two_intro/dialogue_box/Panel/dialogue"]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -494.0
+margin_top = -70.0
+margin_right = -8.0
+margin_bottom = 92.0
+theme = ExtResource( 6 )
+bbcode_enabled = true
+bbcode_text = "Päättäkää keskuudestanne pelinjohtaja. Hän käyttää tällä tasolla laskinta. Teillä muilla on käytössänne sensorit joiden dataa kerrotte pelinjohtajalle."
+text = "Päättäkää keskuudestanne pelinjohtaja. Hän käyttää tällä tasolla laskinta. Teillä muilla on käytössänne sensorit joiden dataa kerrotte pelinjohtajalle."
+
+[node name="2" type="RichTextLabel" parent="level_two_intro/dialogue_box/Panel/dialogue"]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -494.0
+margin_top = -70.0
+margin_right = -8.0
+margin_bottom = 92.0
+theme = ExtResource( 6 )
+bbcode_enabled = true
+bbcode_text = "Oikea data ja oikea laskutoimitus johtaa oikeaan tulokseen! Muistakaa että kommunikaatio on tärkeää. "
+text = "Oikea data ja oikea laskutoimitus johtaa oikeaan tulokseen! Muistakaa että kommunikaatio on tärkeää. "
+
+[node name="3" type="RichTextLabel" parent="level_two_intro/dialogue_box/Panel/dialogue"]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -494.0
+margin_top = -70.0
+margin_right = -8.0
+margin_bottom = 92.0
+theme = ExtResource( 6 )
+bbcode_enabled = true
+bbcode_text = "Tällä tasolla nopeus on valttia. Mitä nopeampia olette sen enemmän pisteitä saatte, olettaen että olette vastanneet oikein."
+text = "Tällä tasolla nopeus on valttia. Mitä nopeampia olette sen enemmän pisteitä saatte, olettaen että olette vastanneet oikein."
+
+[node name="4" type="RichTextLabel" parent="level_two_intro/dialogue_box/Panel/dialogue"]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -494.0
+margin_top = -70.0
+margin_right = -8.0
+margin_bottom = 92.0
+theme = ExtResource( 6 )
+bbcode_enabled = true
+bbcode_text = "[wave]Onnea matkaan![/wave]"
+text = "Onnea matkaan!"
+
+[node name="next_dialogue" type="Button" parent="level_two_intro/dialogue_box/Panel"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 293.5
+margin_top = -24.5
+margin_right = 388.5
+margin_bottom = 18.5
+rect_pivot_offset = Vector2( 47, 21 )
+text = "jatka"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="level_two_intro/dialogue_box/Panel/next_dialogue"]
+autoplay = "button_size_pump"
+anims/button_size_pump = SubResource( 6 )
+
+[node name="naming" type="Control" parent="level_two_intro/dialogue_box"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+theme = ExtResource( 2 )
+
+[node name="enter_name" type="LineEdit" parent="level_two_intro/dialogue_box/naming"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 325.5
+margin_top = 326.5
+margin_right = 658.5
+margin_bottom = 424.5
+caret_blink = true
+caret_blink_speed = 0.5
+
+[node name="apply_name" type="Button" parent="level_two_intro/dialogue_box/naming"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 432.5
+margin_top = 425.0
+margin_right = 527.5
+margin_bottom = 468.0
+rect_pivot_offset = Vector2( 47, 21 )
+theme = ExtResource( 2 )
+text = "ok!"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="level_two_intro/dialogue_box/naming/apply_name"]
+anims/RESET = SubResource( 7 )
+anims/size_pump = SubResource( 8 )
+
+[node name="info_pop_up_window" parent="." instance=ExtResource( 13 )]
+visible = false
+
+[node name="ScrollContainer" type="ScrollContainer" parent="info_pop_up_window/Panel" index="1"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -400.0
+margin_top = -171.0
+margin_right = 400.0
+margin_bottom = 235.0
+theme = ExtResource( 2 )
+scroll_horizontal_enabled = false
+
+[node name="info_text_body" type="RichTextLabel" parent="info_pop_up_window/Panel/ScrollContainer"]
+margin_right = 750.0
+margin_bottom = 400.0
+rect_min_size = Vector2( 750, 400 )
+bbcode_enabled = true
+bbcode_text = "OHJEET
+
+Työryhmä
+Valitkaa teille ennalta annettu työryhmä. Työryhmää voitte vaihtaa painamalla ryhmän nimen oikealta puolelta löytyvillä nuolinäppäimillä.
+
+Roolit
+Valitkaa joukostanne pelinjohtaja. Hän valitsee itsellee pelinjohtajan roolin. Loput työryhmästänne voivat jatkaa aiemmin saamilla rooleillaan. Varmistakaa että ryhmässänne on vähintään yksi Energiakonsultti ja yksi LVI-suunnittelija tai vaihtoehtoisesti yksi Yleishenkilö Jantunen.
+
+Tason aloitus
+Kun olette valmiita painakaa Aloita-painiketta."
+text = "OHJEET
+
+Työryhmä
+Valitkaa teille ennalta annettu työryhmä. Työryhmää voitte vaihtaa painamalla ryhmän nimen oikealta puolelta löytyvillä nuolinäppäimillä.
+
+Roolit
+Valitkaa joukostanne pelinjohtaja. Hän valitsee itsellee pelinjohtajan roolin. Loput työryhmästänne voivat jatkaa aiemmin saamilla rooleillaan. Varmistakaa että ryhmässänne on vähintään yksi Energiakonsultti ja yksi LVI-suunnittelija tai vaihtoehtoisesti yksi Yleishenkilö Jantunen.
+
+Tason aloitus
+Kun olette valmiita painakaa Aloita-painiketta."
+
+[connection signal="value_changed" from="holder/SpinBox" to="." method="_on_SpinBox_value_changed"]
+[connection signal="pressed" from="holder/RoleButtons/jantunen_button" to="." method="_on_jantunen_button_pressed"]
+[connection signal="pressed" from="info" to="." method="_on_info_pressed"]
+[connection signal="pressed" from="level_two_intro/role_selection/game_master_panel/game_master" to="level_two_intro" method="_on_game_master_pressed"]
+[connection signal="pressed" from="level_two_intro/role_selection/role_panel/player_role" to="level_two_intro" method="_on_player_role_pressed"]
+[connection signal="dialogue_ended" from="level_two_intro/dialogue_box" to="level_two_intro" method="_on_dialogue_box_dialogue_ended"]
+[connection signal="pressed" from="level_two_intro/dialogue_box/Panel/next_dialogue" to="level_two_intro" method="_on_next_dialogue_pressed"]
+[connection signal="pressed" from="level_two_intro/dialogue_box/Panel/next_dialogue" to="level_two_intro/dialogue_box" method="_on_next_dialogue_pressed"]
+[connection signal="pressed" from="level_two_intro/dialogue_box/naming/apply_name" to="level_two_intro" method="_on_apply_name_pressed"]
+
+[editable path="info_pop_up_window"]
